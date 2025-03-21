@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>关于常量引用、指针引用与对指针的引用 | Hexo</title>
+  <title>const,引用与指针 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="对const的引用（常量引用）引用常量必须使用对const的引用，但所引用对象可以是常量也可以是变量。 12345int i &#x3D; 1024;const int a &#x3D; 1024; &#x2F;&#x2F;const对象必须初始化const int &amp;b &#x3D; a;  &#x2F;&#x2F;正确const int &amp;c &#x3D; i;  &#x2F;&#x2F;正确int &amp;d &#x3D; a;        &#x2F;&#x2F;错误 此引用(b)不能修改所引用对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于常量引用、指针引用与对指针的引用">
+<meta property="og:title" content="const,引用与指针">
 <meta property="og:url" content="http://example.com/2025/03/19/learn1/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="对const的引用（常量引用）引用常量必须使用对const的引用，但所引用对象可以是常量也可以是变量。 12345int i &#x3D; 1024;const int a &#x3D; 1024; &#x2F;&#x2F;const对象必须初始化const int &amp;b &#x3D; a;  &#x2F;&#x2F;正确const int &amp;c &#x3D; i;  &#x2F;&#x2F;正确int &amp;d &#x3D; a;        &#x2F;&#x2F;错误 此引用(b)不能修改所引用对">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-19T09:23:52.711Z">
-<meta property="article:modified_time" content="2025-03-21T11:51:10.290Z">
+<meta property="article:modified_time" content="2025-03-21T13:17:06.057Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      关于常量引用、指针引用与对指针的引用
+      const,引用与指针
     </h1>
   
 
@@ -110,11 +110,14 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> i =<span class="number">256</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> c = &amp;i;    <span class="comment">//常量指针指向常量i;</span></span><br><span class="line">*c = <span class="number">1024</span>;      <span class="comment">//错误</span></span><br><span class="line">c = &amp;a;         <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
 <p>若所指对象是变量，则可以通过此指针修改该值，但指针本身的值不能改变。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">1024</span>; </span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> b = &amp;a;  <span class="comment">//常量指针指向变量a;</span></span><br><span class="line">*b = <span class="number">256</span>;       <span class="comment">//正确</span></span><br><span class="line">b = &amp;i;         <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+<h2 id="顶层const与底层const"><a href="#顶层const与底层const" class="headerlink" title="顶层const与底层const"></a>顶层const与底层const</h2><p>用顶层const表示自己本身是个常量，底层const表示所指对象是一个常量.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">1023</span>;</span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> p1 = &amp;i;     <span class="comment">//顶层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> c1 = <span class="number">42</span>;      <span class="comment">//顶层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *p2 = &amp;c1;    <span class="comment">//底层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> p3 = p2;       <span class="comment">//靠右是顶层const,靠左是底层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> &amp;r = c1;      <span class="comment">//声明引用的都是底层const</span></span><br></pre></td></tr></table></figure>
+<p>当执行对象的赋值操作时，赋值双方必须有相同的底层const资格，否则无法赋值。也可以通过本身的定义加以判断。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/19/learn1/" data-id="cm8ipzaz10000cww8h05q5vsh" data-title="关于常量引用、指针引用与对指针的引用" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/19/learn1/" data-id="cm8ixq29h0000jcw89awi1b45" data-title="const,引用与指针" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -122,16 +125,6 @@
   </div>
   
     
-<nav id="article-nav">
-  
-  
-    <a href="/2025/03/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -165,11 +158,7 @@
       <ul>
         
           <li>
-            <a href="/2025/03/19/learn1/">关于常量引用、指针引用与对指针的引用</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/19/hello-world/">Hello</a>
+            <a href="/2025/03/19/learn1/">const,引用与指针</a>
           </li>
         
       </ul>

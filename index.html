@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/19/learn1/">关于常量引用、指针引用与对指针的引用</a>
+      <a class="p-name article-title" href="/2025/03/19/learn1/">const,引用与指针</a>
     </h1>
   
 
@@ -108,62 +108,14 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> i =<span class="number">256</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> c = &amp;i;    <span class="comment">//常量指针指向常量i;</span></span><br><span class="line">*c = <span class="number">1024</span>;      <span class="comment">//错误</span></span><br><span class="line">c = &amp;a;         <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
 <p>若所指对象是变量，则可以通过此指针修改该值，但指针本身的值不能改变。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">1024</span>; </span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> b = &amp;a;  <span class="comment">//常量指针指向变量a;</span></span><br><span class="line">*b = <span class="number">256</span>;       <span class="comment">//正确</span></span><br><span class="line">b = &amp;i;         <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+<h2 id="顶层const与底层const"><a href="#顶层const与底层const" class="headerlink" title="顶层const与底层const"></a>顶层const与底层const</h2><p>用顶层const表示自己本身是个常量，底层const表示所指对象是一个常量.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">1023</span>;</span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> p1 = &amp;i;     <span class="comment">//顶层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> c1 = <span class="number">42</span>;      <span class="comment">//顶层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *p2 = &amp;c1;    <span class="comment">//底层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> p3 = p2;       <span class="comment">//靠右是顶层const,靠左是底层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> &amp;r = c1;      <span class="comment">//声明引用的都是底层const</span></span><br></pre></td></tr></table></figure>
+<p>当执行对象的赋值操作时，赋值双方必须有相同的底层const资格，否则无法赋值。也可以通过本身的定义加以判断。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/19/learn1/" data-id="cm8ipzaz10000cww8h05q5vsh" data-title="关于常量引用、指针引用与对指针的引用" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/19/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2025-03-18T18:46:08.120Z" itemprop="datePublished">2025-03-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/19/hello-world/">Hello</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/19/hello-world/" data-id="cm8euqtst000094w85shhdc3d" data-title="Hello" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/19/learn1/" data-id="cm8ixq29h0000jcw89awi1b45" data-title="const,引用与指针" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -206,11 +158,7 @@
       <ul>
         
           <li>
-            <a href="/2025/03/19/learn1/">关于常量引用、指针引用与对指针的引用</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/19/hello-world/">Hello</a>
+            <a href="/2025/03/19/learn1/">const,引用与指针</a>
           </li>
         
       </ul>
