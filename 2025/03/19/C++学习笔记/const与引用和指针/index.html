@@ -9,12 +9,12 @@
   <meta name="description" content="对const的引用（常量引用）引用常量必须使用对const的引用，但所引用对象可以是常量也可以是变量。不能用常量引用初始化一个非常量引用。 123456int i &#x3D; 1024;const int a &#x3D; 1024; &#x2F;&#x2F;const对象必须初始化const int &amp;b &#x3D; a;  &#x2F;&#x2F;正确const int &amp;c &#x3D; i;  &#x2F;&#x2F;正确int &amp;d &#x3D; a;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="const,引用与指针">
-<meta property="og:url" content="http://example.com/2025/03/19/1/index.html">
+<meta property="og:url" content="http://example.com/2025/03/19/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/const%E4%B8%8E%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="对const的引用（常量引用）引用常量必须使用对const的引用，但所引用对象可以是常量也可以是变量。不能用常量引用初始化一个非常量引用。 123456int i &#x3D; 1024;const int a &#x3D; 1024; &#x2F;&#x2F;const对象必须初始化const int &amp;b &#x3D; a;  &#x2F;&#x2F;正确const int &amp;c &#x3D; i;  &#x2F;&#x2F;正确int &amp;d &#x3D; a;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-19T09:23:52.711Z">
-<meta property="article:modified_time" content="2025-03-29T12:09:06.172Z">
+<meta property="article:modified_time" content="2025-07-25T12:06:26.218Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,9 +73,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-C++学习笔记/const与引用和指针" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/03/19/1/" class="article-date">
+    <a href="/2025/03/19/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/const%E4%B8%8E%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88/" class="article-date">
   <time class="dt-published" datetime="2025-03-19T09:23:52.711Z" itemprop="datePublished">2025-03-19</time>
 </a>
     
@@ -99,17 +99,69 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">1024</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> a = <span class="number">1024</span>; <span class="comment">//const对象必须初始化</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> &amp;b = a;  <span class="comment">//正确</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> &amp;c = i;  <span class="comment">//正确</span></span><br><span class="line"><span class="type">int</span> &amp;d = a;        <span class="comment">//错误</span></span><br><span class="line"><span class="type">int</span> &amp;d = <span class="number">42</span>;    <span class="comment">//错误，字面值也是常量无法初始化非常量引用</span></span><br></pre></td></tr></table></figure>
 <p>此引用(b)不能修改所引用对象的值,无论所引用对象是常量还是变量。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">1024</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> a = <span class="number">1024</span>; </span><br><span class="line"><span class="type">const</span> <span class="type">int</span> &amp;b = a;</span><br><span class="line">b = <span class="number">256</span>;           <span class="comment">//错误</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> &amp;c = i;</span><br><span class="line">c = <span class="number">256</span>;           <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+<p>在 C++ 中，const T&amp; 是唯一可以绑定到常量对象、右值、临时值（表达式结果）的“左值引用类型”。</p>
+<table>
+<thead>
+<tr>
+<th align="center">情况</th>
+<th align="center">int&amp; 是否能绑定</th>
+<th align="center">const int&amp; 是否能绑定</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>int</code> 左值</td>
+<td align="center">✅ 是</td>
+<td align="center">✅ 是</td>
+</tr>
+<tr>
+<td align="center"><code>const int</code> 左值</td>
+<td align="center">❌ 否</td>
+<td align="center">✅ 是</td>
+</tr>
+<tr>
+<td align="center">字面值 <code>42</code></td>
+<td align="center">❌ 否</td>
+<td align="center">✅ 是</td>
+</tr>
+<tr>
+<td align="center">表达式 <code>a + b</code></td>
+<td align="center">❌ 否</td>
+<td align="center">✅ 是（临时变量）</td>
+</tr>
+</tbody></table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">byValue</span><span class="params">(<span class="type">int</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">byRef</span><span class="params">(<span class="type">int</span>&amp; x)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">byConstRef</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; x)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">byRvalueRef</span><span class="params">(<span class="type">int</span>&amp;&amp; x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">byRef</span>(a);        <span class="comment">// ✅ OK</span></span><br><span class="line">    <span class="comment">// byRef(b);     // ❌ Error: const int 不能绑定 int&amp;</span></span><br><span class="line">    <span class="comment">// byRef(10);    // ❌ Error: 字面值不能绑定 int&amp;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">byConstRef</span>(a);   <span class="comment">// ✅ OK</span></span><br><span class="line">    <span class="built_in">byConstRef</span>(b);   <span class="comment">// ✅ OK</span></span><br><span class="line">    <span class="built_in">byConstRef</span>(<span class="number">10</span>);  <span class="comment">// ✅ OK</span></span><br><span class="line">    <span class="built_in">byConstRef</span>(a + b); <span class="comment">// ✅ OK</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>由于引用(b)不是一个对象，所以不存在引用(b)是常量还是变量，也就是说常量引用这个说法其实是不正确的。</p>
-<h2 id="指向常量的指针"><a href="#指向常量的指针" class="headerlink" title="指向常量的指针"></a>指向常量的指针</h2><p>与对const的引用相同，指向常量必须使用指向常量的指针，但所引用对象可以是常量也可以是变量。不能用指向常量的指针初始化一个非指向常量的指针。</p>
+<h2 id="常量指针（指向常量的指针）"><a href="#常量指针（指向常量的指针）" class="headerlink" title="常量指针（指向常量的指针）"></a>常量指针（指向常量的指针）</h2><p>const 数据类型 *变量名</p>
+<ul>
+<li>指向常量必须使用指向常量的指针，但所指向的对象可以是常量也可以是变量。</li>
+<li>不能通过解引用的方式修改所指向的常量或变量的值（若指向的是变量，则可以通过变量名修改）。</li>
+<li>不能用指向常量的指针初始化一个非指向常量的指针。</li>
+<li>注意事项<ul>
+<li>指向的对象可以改变。</li>
+<li>一般用于修饰函数的形参，表示不希望在函数中修改内存地址中的值。</li>
+<li>如果用于形参，虽然指向的对象可以改变，但没有意义。</li>
+<li>如果形参的值不需要改变，建议加上const修饰。</li>
+</ul>
+</li>
+</ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">1024</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> a = <span class="number">1024</span>; <span class="comment">//const对象必须初始化</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *b = &amp;a;  <span class="comment">//正确</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *c = &amp;i;  <span class="comment">//正确</span></span><br><span class="line"><span class="type">int</span> *d = &amp;a;        <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
 <p>此指针(b)指向常量(a),也就是它的值为常量的地址，且此指针(b)不能修改所指向对象的值,但此指针可以修改指向其他对象。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> a = <span class="number">1024</span>; </span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *b = &amp;a;</span><br><span class="line">*b = <span class="number">256</span>;           <span class="comment">//错误</span></span><br><span class="line"><span class="type">int</span> i = <span class="number">1024</span>;</span><br><span class="line">b = &amp;i;             <span class="comment">//正确  </span></span><br></pre></td></tr></table></figure>
-<h2 id="常量指针（const指针）"><a href="#常量指针（const指针）" class="headerlink" title="常量指针（const指针）"></a>常量指针（const指针）</h2><p>常量指针必须初始化，一旦初始化完成，它的值（指向对象的地址）就不能改变了。变量，常量都可初始化。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">1024</span>; </span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> b = &amp;a;  <span class="comment">//常量指针指向变量a;</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> i =<span class="number">256</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> c = &amp;i;    <span class="comment">//常量指针指向常量i;</span></span><br></pre></td></tr></table></figure>
-<p>常量指针能否修改所指向对象的值，取决于所指对象的类型。<br>若所指对象是常量，则不论是所指对象还是指针本身的值都无法修改。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> i =<span class="number">256</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> c = &amp;i;    <span class="comment">//常量指针指向常量i;</span></span><br><span class="line">*c = <span class="number">1024</span>;      <span class="comment">//错误</span></span><br><span class="line">c = &amp;a;         <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+<h2 id="指针常量（const指针）与常指针常量"><a href="#指针常量（const指针）与常指针常量" class="headerlink" title="指针常量（const指针）与常指针常量"></a>指针常量（const指针）与常指针常量</h2><p>指针常量：数据类型 *const 变量名<br>常指针常量：const 数据类型 *const 变量名<br>常量指针必须初始化，一旦初始化完成，它的值（指向对象的地址）就不能改变了。变量，常量都可指向。</p>
+<ul>
+<li>注意事项<ul>
+<li>指向的对象不能改变。</li>
+<li>定义的同时必须初始化，否则没有意义。</li>
+<li>可以通过解引用修改内存地址的值。</li>
+</ul>
+</li>
+</ul>
+<p>常指针常量指向的对象不可以改变，不能通过解引用的方法修改内存地址的值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">1024</span>; </span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> b = &amp;a;  <span class="comment">//指向变量a;</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> i =<span class="number">256</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> c = &amp;i;    <span class="comment">//指向常量i;</span></span><br></pre></td></tr></table></figure>
+<p>指针常量能否修改所指向对象的值，取决于所指对象的类型。<br>若所指对象是常量，则不论是所指对象还是指针本身的值都无法修改。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> i =<span class="number">256</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> c = &amp;i;    <span class="comment">//指向常量i;</span></span><br><span class="line">*c = <span class="number">1024</span>;      <span class="comment">//错误</span></span><br><span class="line">c = &amp;a;         <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
 <p>若所指对象是变量，则可以通过此指针修改该值，但指针本身的值不能改变。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">1024</span>; </span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> b = &amp;a;  <span class="comment">//常量指针指向变量a;</span></span><br><span class="line">*b = <span class="number">256</span>;       <span class="comment">//正确</span></span><br><span class="line">b = &amp;i;         <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">1024</span>; </span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> b = &amp;a;  <span class="comment">//指向变量a;</span></span><br><span class="line">*b = <span class="number">256</span>;       <span class="comment">//正确</span></span><br><span class="line">b = &amp;i;         <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
 <h2 id="顶层const与底层const"><a href="#顶层const与底层const" class="headerlink" title="顶层const与底层const"></a>顶层const与底层const</h2><p>用顶层const表示自己本身是个常量，底层const表示所指对象是一个常量.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">1023</span>;</span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> p1 = &amp;i;     <span class="comment">//顶层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> c1 = <span class="number">42</span>;      <span class="comment">//顶层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *p2 = &amp;c1;    <span class="comment">//底层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *<span class="type">const</span> p3 = p2;       <span class="comment">//靠右是顶层const,靠左是底层const</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> &amp;r = c1;      <span class="comment">//声明引用的都是底层const</span></span><br></pre></td></tr></table></figure>
 <h2 id="执行对象的赋值操作"><a href="#执行对象的赋值操作" class="headerlink" title="执行对象的赋值操作"></a>执行对象的赋值操作</h2><p>对于含有顶层const的，由于顶层const表示自己本身是个常量，所以无法作为左值，作为右值时，忽略顶层const，只看底层const：<br>赋值双方有相同的底层const资格，则可赋值。<br>赋值双方无相同底层const资格，const可以指向或绑定在非常量上，const不能初始化或赋值给非常量。</p>
@@ -118,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/19/1/" data-id="cm94ep0bn00003ow8dtbxgz08" data-title="const,引用与指针" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/19/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/const%E4%B8%8E%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88/" data-id="cmdohx9h7000130w82tsifuse" data-title="const,引用与指针" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -128,7 +180,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2025/03/28/2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2025/03/28/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -160,7 +212,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
     </div>
   </div>
 
@@ -173,11 +225,23 @@
       <ul>
         
           <li>
-            <a href="/2025/03/28/2/">数据类型</a>
+            <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/">引用</a>
           </li>
         
           <li>
-            <a href="/2025/03/19/1/">const,引用与指针</a>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/">枚举</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构与算法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/29/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98/">动态分配内存</a>
           </li>
         
       </ul>

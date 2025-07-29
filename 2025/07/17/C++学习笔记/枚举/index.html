@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>枚举 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="枚举枚举是一种创建符号常量的方法。枚举的语法： 12enum 枚举名 &#123; 枚举量1 , 枚举量2 , 枚举量3, ......, 枚举量n &#125;;enum Color &#123; red, blue, yellow &#125;;   &#x2F;&#x2F;将red、yellow、blue作为符号常量，默认值是整数的0、1、2。 使用1234567891011121314151617int ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="枚举">
+<meta property="og:url" content="http://example.com/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="枚举枚举是一种创建符号常量的方法。枚举的语法： 12enum 枚举名 &#123; 枚举量1 , 枚举量2 , 枚举量3, ......, 枚举量n &#125;;enum Color &#123; red, blue, yellow &#125;;   &#x2F;&#x2F;将red、yellow、blue作为符号常量，默认值是整数的0、1、2。 使用1234567891011121314151617int ma">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-17T12:11:49.226Z">
+<meta property="article:modified_time" content="2025-07-17T12:24:12.657Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C++学习笔记/枚举" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/" class="article-date">
+  <time class="dt-published" datetime="2025-07-17T12:11:49.226Z" itemprop="datePublished">2025-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      枚举
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>枚举是一种创建符号常量的方法。<br><strong>枚举的语法：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> 枚举名 &#123; 枚举量<span class="number">1</span> , 枚举量<span class="number">2</span> , 枚举量<span class="number">3</span>, ......, 枚举量n &#125;;</span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Color</span> &#123; red, blue, yellow &#125;;   <span class="comment">//将red、yellow、blue作为符号常量，默认值是整数的0、1、2。</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">enum</span> <span class="title class_">colors</span> &#123; red, yellow, blue, other &#125;;    <span class="comment">// 创建枚举类型colors。</span></span><br><span class="line"></span><br><span class="line">	colors cc = yellow;           <span class="comment">// 创建枚举变量，并赋初始值。</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;red=&quot;</span> &lt;&lt; red &lt;&lt; <span class="string">&quot;,yellow=&quot;</span> &lt;&lt; yellow &lt;&lt; <span class="string">&quot;,blue=&quot;</span> &lt;&lt; blue &lt;&lt; <span class="string">&quot;,other=&quot;</span> &lt;&lt; other &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">switch</span> (cc)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> red:			cout &lt;&lt; <span class="string">&quot;红色。\n&quot;</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> yellow:	cout &lt;&lt; <span class="string">&quot;黄色。\n&quot;</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> blue:		cout &lt;&lt; <span class="string">&quot;蓝色。\n&quot;</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:			cout &lt;&lt; <span class="string">&quot;未知。\n&quot;</span>; </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>用枚举创建的变量取值只能在枚举量范围之内。</li>
+<li>可以显式的设置枚举量的值（必须是整数）。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">colors</span> &#123;red=<span class="number">1</span>,yellow=<span class="number">2</span>,blue=<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">colors</span> &#123;red,yellow,blue&#125;;      <span class="comment">// 默认值是0、1、2。</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以只显式的指定某些枚举量的值（枚举量的值可以重复）。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">colors</span> &#123;red=<span class="number">1</span>,yellow,blue&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以将整数强制转换成枚举量，语法：枚举类型(整数)</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">colors c = (colors)<span class="number">1</span>;</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">colors c = yellow; </span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/" data-id="cmdohx9hl000b30w84rxdfmhx" data-title="枚举" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          引用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据结构与算法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/">引用</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/">枚举</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构与算法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/29/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98/">动态分配内存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -9,12 +9,12 @@
   <meta name="description" content="1.基本内置类型基本内置类型分为算数类型和空类型 (1)算数类型算数类型分为整型（包括字符和布尔）和浮点型    类型 说明 最小尺寸    short 短整型 16位   int 整型，存储整数 16位   long 长整型 32位   long long 长整型 64位   char 字符 8位   wchar_t 宽字符，用于扩展字符集 16位   char16_t Unicode字符，用于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据类型">
-<meta property="og:url" content="http://example.com/2025/03/28/2/index.html">
+<meta property="og:url" content="http://example.com/2025/03/28/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.基本内置类型基本内置类型分为算数类型和空类型 (1)算数类型算数类型分为整型（包括字符和布尔）和浮点型    类型 说明 最小尺寸    short 短整型 16位   int 整型，存储整数 16位   long 长整型 32位   long long 长整型 64位   char 字符 8位   wchar_t 宽字符，用于扩展字符集 16位   char16_t Unicode字符，用于">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-28T09:02:59.802Z">
-<meta property="article:modified_time" content="2025-04-05T16:05:27.697Z">
+<meta property="article:modified_time" content="2025-04-10T13:09:28.972Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,9 +73,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-C++学习笔记/数据类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/03/28/2/" class="article-date">
+    <a href="/2025/03/28/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
   <time class="dt-published" datetime="2025-03-28T09:02:59.802Z" itemprop="datePublished">2025-03-28</time>
 </a>
     
@@ -441,13 +441,15 @@
 <h2 id="7-decltype-expr"><a href="#7-decltype-expr" class="headerlink" title="7.decltype(expr)"></a>7.decltype(expr)</h2><p>返回 表达式 expr 的类型，但不会实际求值或创建变量。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">decltype</span>(a) b = <span class="number">20</span>;   <span class="comment">// b 是 int 类型</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">decltype</span>(x) y = <span class="number">6</span>;    <span class="comment">// y 是 const int</span></span><br></pre></td></tr></table></figure>
 <h5 id="引用-const-情况下的-decltype"><a href="#引用-const-情况下的-decltype" class="headerlink" title="引用 &amp; const 情况下的 decltype"></a>引用 &amp; const 情况下的 decltype</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> &amp;ref = x;</span><br><span class="line"></span><br><span class="line"><span class="keyword">decltype</span>(x) a;      <span class="comment">// int</span></span><br><span class="line"><span class="keyword">decltype</span>(ref) b = x;  <span class="comment">// int&amp;</span></span><br><span class="line"><span class="keyword">decltype</span>((x)) b = x;    <span class="comment">// int&amp;   ← 多了个括号，变成引用类型！</span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> cx = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">decltype</span>(cx) d = <span class="number">30</span>;  <span class="comment">// const int</span></span><br></pre></td></tr></table></figure>
-<h5 id="数组-auto-decltype"><a href="#数组-auto-decltype" class="headerlink" title="数组 + auto + decltype"></a>数组 + auto + decltype</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> a = arr;      <span class="comment">//数组名退化为指针,a类型为int*</span></span><br><span class="line"><span class="keyword">decltype</span>(arr);     <span class="comment">//保留完整数组类型,推导类型为int[5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span>&amp; a = arr;     <span class="comment">//a类型为int (&amp;)[5]</span></span><br><span class="line"><span class="keyword">decltype</span>((arr));   <span class="comment">//推导类型为int (&amp;)[5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> a = arr[<span class="number">0</span>];   <span class="comment">//取元素，退化为值类型，a为int类型</span></span><br><span class="line"><span class="keyword">decltype</span>(arr[<span class="number">0</span>])   <span class="comment">//arr[0] 是左值，推导为int&amp;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span>&amp; a = arr[<span class="number">0</span>];  <span class="comment">//引用数组元素，保留引用，a为int&amp;类型</span></span><br><span class="line"><span class="keyword">decltype</span>(+arr[<span class="number">0</span>])  <span class="comment">//+arr[0]是右值，推导为值类型int，+arr把arr的引用性质去掉，强制转换为一个右值</span></span><br></pre></td></tr></table></figure>
+<h5 id="数组-auto-decltype"><a href="#数组-auto-decltype" class="headerlink" title="数组 + auto + decltype"></a>数组 + auto + decltype</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> a = arr;      <span class="comment">//数组名退化为指针,a类型为int*</span></span><br><span class="line"><span class="keyword">decltype</span>(arr);     <span class="comment">//保留完整数组类型,推导类型为int[5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span>&amp; a = arr;     <span class="comment">//a类型为int (&amp;)[5]</span></span><br><span class="line"><span class="keyword">decltype</span>((arr));   <span class="comment">//推导类型为int (&amp;)[5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> a = arr[<span class="number">0</span>];   <span class="comment">//取元素，退化为值类型，a为int类型</span></span><br><span class="line"><span class="keyword">decltype</span>(arr[<span class="number">0</span>])   <span class="comment">//arr[0] 是左值，推导为int&amp;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span>&amp; a = arr[<span class="number">0</span>];  <span class="comment">//引用数组元素，保留引用，a为int&amp;类型</span></span><br><span class="line"><span class="keyword">decltype</span>(+arr[<span class="number">0</span>])  <span class="comment">//+arr[0]是右值，推导为值类型int，+arr把arr的引用性质去掉，强制转换为一个右值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> a = &amp;arr;      <span class="comment">// a 类型是 int (*)[5]，即指向包含 5 个整数的数组的指针类型。</span></span><br><span class="line"><span class="keyword">decltype</span>(&amp;arr);     <span class="comment">//类型是 int (*)[5]，即指向包含 5 个整数的数组的指针类型。</span></span><br></pre></td></tr></table></figure>
 <h2 id="8-类型别名"><a href="#8-类型别名" class="headerlink" title="8.类型别名"></a>8.类型别名</h2><h4 id="（1）typedef"><a href="#（1）typedef" class="headerlink" title="（1）typedef"></a>（1）typedef</h4><p>typedef 原始类型 新类型名;</p>
 <h5 id="1-给基础类型创建别名"><a href="#1-给基础类型创建别名" class="headerlink" title="1.给基础类型创建别名"></a>1.给基础类型创建别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">int</span> uint;</span><br><span class="line">uint a = <span class="number">10</span>;  <span class="comment">// 相当于 unsigned int a = 10;</span></span><br></pre></td></tr></table></figure>
 <h5 id="2-给指针类型创建别名"><a href="#2-给指针类型创建别名" class="headerlink" title="2.给指针类型创建别名"></a>2.给指针类型创建别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span>* IntPtr;</span><br><span class="line">IntPtr p, q;  <span class="comment">// p 和 q 都是 int* 类型的指针</span></span><br></pre></td></tr></table></figure>
 <h5 id="3-给数组类型创建别名"><a href="#3-给数组类型创建别名" class="headerlink" title="3.给数组类型创建别名"></a>3.给数组类型创建别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> IntArray[<span class="number">10</span>];</span><br><span class="line">IntArray arr1, arr2;  <span class="comment">// arr1 和 arr2 都是 int[10] 类型的数组</span></span><br></pre></td></tr></table></figure>
 <h5 id="4-给结构体类型创建别名"><a href="#4-给结构体类型创建别名" class="headerlink" title="4.给结构体类型创建别名"></a>4.给结构体类型创建别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">&#125; PersonType;</span><br><span class="line"></span><br><span class="line">PersonType p1;  <span class="comment">// p1 是 PersonType 类型，实际上是 struct Person</span></span><br></pre></td></tr></table></figure>
 <h5 id="5-给类类型创建别名"><a href="#5-给类类型创建别名" class="headerlink" title="5.给类类型创建别名"></a>5.给类类型创建别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line">    <span class="built_in">MyClass</span>(<span class="type">int</span> v) : <span class="built_in">value</span>(v) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> MyClass AliasMyClass;  <span class="comment">// 创建 MyClass 类型的别名</span></span><br><span class="line"><span class="function">AliasMyClass <span class="title">obj</span><span class="params">(<span class="number">10</span>)</span></span>;  <span class="comment">// 使用别名创建对象</span></span><br></pre></td></tr></table></figure>
+<h5 id="6-定义数组指针类型别名"><a href="#6-定义数组指针类型别名" class="headerlink" title="6.定义数组指针类型别名"></a>6.定义数组指针类型别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">int</span> <span class="params">(*IntArrayPtr)</span>[10]</span>;  <span class="comment">// IntArrayPtr 是指向长度为 10 的 int 数组的指针类型</span></span><br></pre></td></tr></table></figure>
+<h5 id="7-定义指针数组类型别名"><a href="#7-定义指针数组类型别名" class="headerlink" title="7.定义指针数组类型别名"></a>7.定义指针数组类型别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span>* IntPtrArray[<span class="number">10</span>];  <span class="comment">// 定义一个指向 int 类型的指针数组，大小为 10</span></span><br></pre></td></tr></table></figure>
 <h4 id="（2）using"><a href="#（2）using" class="headerlink" title="（2）using"></a>（2）using</h4><p>using 新类型名 &#x3D; 原始类型;</p>
 <h5 id="1-给基本类型创建别名"><a href="#1-给基本类型创建别名" class="headerlink" title="1.给基本类型创建别名"></a>1.给基本类型创建别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> uint = <span class="type">unsigned</span> <span class="type">int</span>;</span><br><span class="line">uint a = <span class="number">10</span>;  <span class="comment">// 相当于 unsigned int a = 10;</span></span><br></pre></td></tr></table></figure>
 <h5 id="2-给指针类型创建别名-1"><a href="#2-给指针类型创建别名-1" class="headerlink" title="2.给指针类型创建别名"></a>2.给指针类型创建别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> IntPtr = <span class="type">int</span>*;</span><br><span class="line">IntPtr p, q;  <span class="comment">// p 和 q 都是 int* 类型的指针</span></span><br></pre></td></tr></table></figure>
@@ -457,10 +459,12 @@
 <h5 id="6-模板类型别名"><a href="#6-模板类型别名" class="headerlink" title="6.模板类型别名"></a>6.模板类型别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">using</span> Vector = std::vector&lt;T&gt;;  <span class="comment">// 这才是合法的</span></span><br></pre></td></tr></table></figure>
 <h5 id="7-定义函数指针别名"><a href="#7-定义函数指针别名" class="headerlink" title="7.定义函数指针别名"></a>7.定义函数指针别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> FuncPtr = <span class="built_in">void</span>(*)(<span class="type">int</span>, <span class="type">double</span>);  <span class="comment">// 定义一个函数指针别名</span></span><br><span class="line">FuncPtr f = some_function;  <span class="comment">// 使用别名来声明函数指针</span></span><br></pre></td></tr></table></figure>
 <h5 id="8-定义引用类型别名"><a href="#8-定义引用类型别名" class="headerlink" title="8.定义引用类型别名"></a>8.定义引用类型别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> IntRef = <span class="type">int</span>&amp;;</span><br><span class="line">IntRef r = a;  <span class="comment">// r 是 int 类型的引用</span></span><br></pre></td></tr></table></figure>
+<h5 id="9-定义数组指针类型别名"><a href="#9-定义数组指针类型别名" class="headerlink" title="9.定义数组指针类型别名"></a>9.定义数组指针类型别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> IntArrayPtr = <span class="built_in">int</span> (*)[<span class="number">10</span>];  <span class="comment">// IntArrayPtr 是指向长度为 10 的 int 数组的指针类型</span></span><br></pre></td></tr></table></figure>
+<h5 id="10-定义指针数组类型别名"><a href="#10-定义指针数组类型别名" class="headerlink" title="10.定义指针数组类型别名"></a>10.定义指针数组类型别名</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> IntPtrArray = <span class="type">int</span>*[<span class="number">10</span>];  <span class="comment">// 定义指向 int 类型的指针数组，大小为 10</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/28/2/" data-id="cm94ep0bs00013ow8c42d2c7a" data-title="数据类型" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/28/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="cmdohx9hj000a30w8hriyf51d" data-title="数据类型" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -470,8 +474,17 @@
     
 <nav id="article-nav">
   
+    <a href="/2025/04/06/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/string/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          字符串
+        
+      </div>
+    </a>
   
-    <a href="/2025/03/19/1/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2025/03/19/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/const%E4%B8%8E%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">const,引用与指针</div>
     </a>
@@ -498,7 +511,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
     </div>
   </div>
 
@@ -511,11 +524,23 @@
       <ul>
         
           <li>
-            <a href="/2025/03/28/2/">数据类型</a>
+            <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/">引用</a>
           </li>
         
           <li>
-            <a href="/2025/03/19/1/">const,引用与指针</a>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/">枚举</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构与算法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/29/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98/">动态分配内存</a>
           </li>
         
       </ul>

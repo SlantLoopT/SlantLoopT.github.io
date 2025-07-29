@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>结构体 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="基本概念与用法结构体是用户自定义的类型，可以将多种数据的表示合并到一起，描述一个完整的对象。使用结构体有两个步骤：  定义结构体描述（类型）。 创建结构体变量。  定义结构体描述struct 结构体名{成员一的数据类型  成员名一;成员二的数据类型  成员名二;成员三的数据类型  成员名三;……成员n的数据类型  成员名n;}; 1234567struct Person&#123;    char">
+<meta property="og:type" content="article">
+<meta property="og:title" content="结构体">
+<meta property="og:url" content="http://example.com/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基本概念与用法结构体是用户自定义的类型，可以将多种数据的表示合并到一起，描述一个完整的对象。使用结构体有两个步骤：  定义结构体描述（类型）。 创建结构体变量。  定义结构体描述struct 结构体名{成员一的数据类型  成员名一;成员二的数据类型  成员名二;成员三的数据类型  成员名三;……成员n的数据类型  成员名n;}; 1234567struct Person&#123;    char">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-01T12:47:29.655Z">
+<meta property="article:modified_time" content="2025-07-17T11:13:26.641Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C++学习笔记/结构体" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/" class="article-date">
+  <time class="dt-published" datetime="2025-07-01T12:47:29.655Z" itemprop="datePublished">2025-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      结构体
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="基本概念与用法"><a href="#基本概念与用法" class="headerlink" title="基本概念与用法"></a>基本概念与用法</h2><p>结构体是用户自定义的类型，可以将多种数据的表示合并到一起，描述一个完整的对象。<br>使用结构体有两个步骤：</p>
+<ul>
+<li>定义结构体描述（类型）。</li>
+<li>创建结构体变量。</li>
+</ul>
+<h4 id="定义结构体描述"><a href="#定义结构体描述" class="headerlink" title="定义结构体描述"></a>定义结构体描述</h4><p>struct 结构体名<br>{<br>成员一的数据类型  成员名一;<br>成员二的数据类型  成员名二;<br>成员三的数据类型  成员名三;<br>……<br>成员n的数据类型  成员名n;<br>};</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="type">char</span> sex = <span class="string">&#x27;m&#x27;</span>;</span><br><span class="line">    <span class="type">float</span> height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>结构体名是标识符。</li>
+<li>结构体的成员可以是任意数据类型。</li>
+<li>定义结构体描述的代码可以放在程序的任何地方，但要考虑定义域，一般放在main函数的上面或头文件中。</li>
+<li>结构体成员可以用C++的类（如string），但是不提倡。</li>
+<li>在C++中，结构体中可以有函数，但是不提倡。</li>
+<li>在C++11中，定义结构体的时候可以指定缺省值。</li>
+</ul>
+<h4 id="创建结构体变量"><a href="#创建结构体变量" class="headerlink" title="创建结构体变量"></a>创建结构体变量</h4><p><strong>创建结构体变量的语法：</strong><br>struct 结构体名 结构体变量名;<br>在C++中，struct关键字可以不写。<br><strong>也可以为结构体成员赋初始值:</strong><br>struct 结构体名 结构体变量名&#x3D;{成员一的值, 成员二的值,……, 成员n的值};<br>C++11可以不写等于号。<br><strong>如果大括号内未包含任何东西或只写一个0，全部的成员都将被设置为0。</strong><br>struct 结构体名 结构体变量名&#x3D;{0};<br><strong>可以在定义结构体的时候创建结构体变量。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> person1;</span><br><span class="line">Person person2;</span><br><span class="line">Person person3=&#123;<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;;</span><br><span class="line">Person person4&#123;<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义结构体的时候创建结构体变量</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="type">char</span> sex = <span class="string">&#x27;m&#x27;</span>;</span><br><span class="line">    <span class="type">float</span> height;</span><br><span class="line">&#125;person1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="type">char</span> sex = <span class="string">&#x27;m&#x27;</span>;</span><br><span class="line">    <span class="type">float</span> height;</span><br><span class="line">&#125;person2&#123;<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="使用结构体"><a href="#使用结构体" class="headerlink" title="使用结构体"></a>使用结构体</h4><p>用成员运算符（.）来访问结构体的每个成员。结构体中的每个成员具备普通变量的全部特征。<br>结构体变量名.结构体成员名;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> person1;</span><br><span class="line">person<span class="number">1.</span>name=<span class="string">&quot;张三&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="占用内存的大小"><a href="#占用内存的大小" class="headerlink" title="占用内存的大小"></a>占用内存的大小</h4><p>用sizeof运算符可以得到整个结构体占用内存的大小，且sizeof()对结构体名和结构体变量名的值是一样的。<br>注意：<strong>整个结构体占用内存的大小不一定等于全部成员占用内存之和。</strong><br>内存对齐：#pragma pack(字节数)，修改内存对齐长度，默认是8字节<br>合理使用内存对齐规则，某些节省内存的做法可能毫无意义。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> person1;</span><br><span class="line"><span class="type">size_t</span> size1 = <span class="built_in">sizeof</span>(person1);</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;sizeof(person1) = &quot;</span> &lt;&lt; size1 &lt;&lt; endl;  <span class="comment">// 32</span></span><br><span class="line"><span class="type">size_t</span> size2 = <span class="built_in">sizeof</span>(Person);</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;sizeof(Person) = &quot;</span> &lt;&lt; size2 &lt;&lt; endl;   <span class="comment">// 32</span></span><br></pre></td></tr></table></figure>
+<h4 id="清空结构体"><a href="#清空结构体" class="headerlink" title="清空结构体"></a>清空结构体</h4><p>创建的结构体变量如果没有初始化，成员中有垃圾值。<br>用memset()函数可以把结构体中全部的成员清零。（只适用于C++基本数据类型）<br>bzero()函数也可以。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">void *memset(void *str, int c, size_t n)</span></span><br><span class="line"><span class="comment">将一段内存区域设置为指定的值。</span></span><br><span class="line"><span class="comment">str -- 指向要填充的内存区域的指针。</span></span><br><span class="line"><span class="comment">c -- 要设置的值，通常是一个无符号字符。</span></span><br><span class="line"><span class="comment">n -- 要被设置为该值的字节数。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">void bzero(void *s, int n);</span></span><br><span class="line"><span class="comment">能够将内存块的前n个字节清零。</span></span><br><span class="line"><span class="comment">s -- 内存指针</span></span><br><span class="line"><span class="comment">n -- 需要清零的字节数。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> person1;</span><br><span class="line"><span class="built_in">memset</span>(&amp;person1, <span class="number">0</span>, <span class="built_in">sizeof</span>(person1));</span><br><span class="line"><span class="built_in">bzero</span>(&amp;person1, <span class="built_in">sizeof</span>(person1));</span><br></pre></td></tr></table></figure>
+<h4 id="复制结构体"><a href="#复制结构体" class="headerlink" title="复制结构体"></a>复制结构体</h4><ul>
+<li>用memcpy()函数把结构体中全部的元素复制到另一个相同类型的结构体（只适用于C++基本数据类型）。</li>
+<li>也可以直接用等于号（只适用于C++基本数据类型）</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> person1;</span><br><span class="line">person<span class="number">1.</span>name=<span class="string">&quot;张三&quot;</span>;</span><br><span class="line">person<span class="number">1.</span>age=<span class="number">18</span>;</span><br><span class="line">person<span class="number">1.</span>sex=<span class="string">&#x27;男&#x27;</span>;</span><br><span class="line">person<span class="number">1.</span>height=<span class="number">1.7</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> person2;</span><br><span class="line"><span class="built_in">memcpy</span>(&amp;person2, &amp;person1, <span class="built_in">sizeof</span>(person1));</span><br><span class="line">person2=person1;</span><br></pre></td></tr></table></figure>
+<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><p>在C++中，用不同类型的指针存放不同类型变量的地址，这一规则也适用于结构体。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> person1;         <span class="comment">// 声明结构体变量person1。</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> *pst = &amp;person1;  <span class="comment">// 声明结构体指针，指向结构体变量person1。</span></span><br></pre></td></tr></table></figure>
+<p>通过结构体指针访问结构体成员。</p>
+<ul>
+<li>(*指针名).成员变量名</li>
+<li>指针名-&gt;成员变量名</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(*pst).name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">pst-&gt;name = <span class="string">&quot;张三&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="用于函数的参数"><a href="#用于函数的参数" class="headerlink" title="用于函数的参数"></a>用于函数的参数</h4><p>如果要把结构体传递给函数，由于结构往往整合了许多的成员数据，它的数据量也绝对不可小觑，使用值传递虽然能够保护实参不被修改，但是却会或多或少地影响到程序的运行效率。<br>所以，一般情况使用引用传递，实参取结构体变量的地址，函数的形参用结构体指针。<br>如果不希望在函数中修改结构体变量的值，可以对形参加const约束。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printStudent</span><span class="params">(Student &amp;stu)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Student student;</span><br><span class="line">    student.age = <span class="number">19</span>;</span><br><span class="line">    student.id = <span class="string">&quot;001&quot;</span>;</span><br><span class="line">    student.name = <span class="string">&quot;Jack&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printStudent</span>(student);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;student age is &quot;</span> &lt;&lt; student.age &lt;&lt; endl;   <span class="comment">// student age is 20</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printStudent</span><span class="params">(Student &amp;stu)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;student id is &quot;</span> &lt;&lt; stu.id &lt;&lt; endl; </span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;student name is &quot;</span> &lt;&lt; stu.name &lt;&lt; endl; </span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;student age is &quot;</span> &lt;&lt; stu.age &lt;&lt; endl;   <span class="comment">// student age is 19</span></span><br><span class="line">    stu.age = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="用于动态分配内存"><a href="#用于动态分配内存" class="headerlink" title="用于动态分配内存"></a>用于动态分配内存</h4><p>用结构体指针指向动态分配的内存的地址。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> *pst = <span class="keyword">new</span> Person;</span><br><span class="line"><span class="built_in">memset</span>(pst, <span class="number">0</span>, <span class="built_in">sizeof</span>(Person));     <span class="comment">// 记得初始化</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//等效</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> *pst = <span class="keyword">new</span> <span class="built_in">Person</span>(&#123;<span class="number">0</span>&#125;);   <span class="comment">// 创建结构体变量并初始化</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> pst;</span><br></pre></td></tr></table></figure>
+<h2 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h2><h4 id="基本语法-1"><a href="#基本语法-1" class="headerlink" title="基本语法"></a>基本语法</h4><p>结构体可以被定义成数组变量，本质上与其它类型的数组变量没有区别。<br><strong>声明结构体数组的语法：</strong><br>struct 结构体类型（结构体名） 数组名[数组长度];<br>在C++中，struct关键字可以不写。<br>初始化结构体数组，要结合使用初始化数组的规则和初始化结构体的规则。<br><strong>使用结构体数组可以用数组表示法，也可以用指针表示法。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> person[<span class="number">3</span>];    <span class="comment">// 声明结构体数组变量person，长度为3。</span></span><br><span class="line">person[<span class="number">0</span>]=&#123;<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;;</span><br><span class="line">person[<span class="number">1</span>]=&#123;<span class="string">&quot;李四&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;;</span><br><span class="line">person[<span class="number">2</span>]=&#123;<span class="string">&quot;王五&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;;</span><br><span class="line"></span><br><span class="line">*person = &#123;<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;;</span><br><span class="line">*(person + <span class="number">1</span>) = &#123;<span class="string">&quot;李四&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;;</span><br><span class="line">*(person + <span class="number">2</span>) = &#123;<span class="string">&quot;王五&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Person</span> person[<span class="number">3</span>]=&#123;&#123;<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;, &#123;<span class="string">&quot;李四&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;, &#123;<span class="string">&quot;王五&quot;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">1.7</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="结构体嵌入数组和结构体"><a href="#结构体嵌入数组和结构体" class="headerlink" title="结构体嵌入数组和结构体"></a>结构体嵌入数组和结构体</h2><h4 id="嵌入数组"><a href="#嵌入数组" class="headerlink" title="嵌入数组"></a>嵌入数组</h4><p>注意区分结构体数组与结构体中的数组。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Human</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">21</span>];        <span class="comment">// 姓名。</span></span><br><span class="line">    <span class="type">int</span> age;              <span class="comment">// 年龄。</span></span><br><span class="line">    <span class="type">double</span> weight;        <span class="comment">// 体重（kg）。</span></span><br><span class="line">    <span class="type">char</span> sex;             <span class="comment">// 性别：X-女；Y-男。</span></span><br><span class="line">    <span class="type">int</span> mark[<span class="number">3</span>];          <span class="comment">// 三次考试编号。</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Human h1 = &#123;<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="number">80.5</span>, <span class="string">&#x27;X&#x27;</span>, &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;&#125;;    <span class="comment">//// 创建结构体变量h1，并初始化。</span></span><br><span class="line">Human h[<span class="number">3</span>];     <span class="comment">// 创建结构体数组变量h，长度为3。</span></span><br><span class="line"><span class="comment">// 访问结构体数组成员的mark数组</span></span><br><span class="line">h[<span class="number">0</span>].mark[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 访问结构体变量的mark数组</span></span><br><span class="line">h<span class="number">1.</span>mark[<span class="number">0</span>] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>嵌入二级数组</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Human</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">21</span>];</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="type">double</span> weight;</span><br><span class="line">    <span class="type">char</span> sex;</span><br><span class="line">    <span class="type">int</span> mark[<span class="number">3</span>][<span class="number">4</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(Human* pst)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)&#123;</span><br><span class="line">            cout &lt;&lt; pst-&gt;mark[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Human h1;       <span class="comment">// 创建结构体变量h1。</span></span><br><span class="line">    <span class="built_in">func</span>(&amp;h1);      <span class="comment">// 传入结构体变量h1的地址。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="嵌套结构体"><a href="#嵌套结构体" class="headerlink" title="嵌套结构体"></a>嵌套结构体</h4><ul>
+<li>无法嵌套自己本身。</li>
+<li>嵌套别的结构体变量时，必须在使用之前先定义。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Pet</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">21</span>];</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Human</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">21</span>];</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    Pet pet;        <span class="comment">// 嵌套结构体变量pet。</span></span><br><span class="line">    Pet pett[<span class="number">3</span>];     <span class="comment">// 嵌套结构体数组pett[3]。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Human h1 = &#123;<span class="string">&quot;char&quot;</span>, <span class="number">18</span>, &#123;<span class="string">&quot;dog&quot;</span>,<span class="number">2</span>&#125;,&#123;&#123;<span class="string">&quot;cat&quot;</span>,<span class="number">3</span>&#125;,&#123;<span class="string">&quot;mouse&quot;</span>,<span class="number">4</span>&#125;,&#123;<span class="string">&quot;bird&quot;</span>,<span class="number">5</span>&#125;&#125;&#125;;      <span class="comment">// 创建结构体变量h1，并初始化。</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;person1.pett[1].name = &quot;</span> &lt;&lt; person<span class="number">1.</span>pett[<span class="number">1</span>].name  &lt;&lt; <span class="string">&quot; person1.pett[1].age = &quot;</span> &lt;&lt; person<span class="number">1.</span>pett[<span class="number">1</span>].age &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结构体中的指针"><a href="#结构体中的指针" class="headerlink" title="结构体中的指针"></a>结构体中的指针</h2><p>结构体中可以存在指针。<br>如果结构体中的指针指向的是动态分配的内存地址：</p>
+<ul>
+<li>sizeof 只看“指针变量本身”，不会看“指针指向的动态内存”。</li>
+<li>对结构体用memset()函数可能会造成内存泄露。</li>
+<li>C++的字符串string(结构体)中有一个指针，指向了动态分配内存的地址。所以在结构体中使用string，要注意上面的情况。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct string</span><br><span class="line">&#123;</span><br><span class="line">	char *ptr;   // 指向动态分配内存的地址。</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">st_t</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	<span class="type">int</span> *p;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">st_t</span> stt;                   <span class="comment">// 创建结构体变量。</span></span><br><span class="line">    stt.p = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">100</span>];       <span class="comment">// p指向动态分配内存。</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">sizeof</span>(stt) &lt;&lt; endl;        <span class="comment">// 16B</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">sizeof</span>(stt.p) &lt;&lt; endl;      <span class="comment">// 8B</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">sizeof</span>(stt.a) &lt;&lt; endl;      <span class="comment">// 4B,又由于边界对齐，需要补上4B的间隔。</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(&amp;stt, <span class="number">0</span>, <span class="built_in">sizeof</span>(stt));       <span class="comment">// 会导致将p的值置为0，p成为空指针，原来指向的内存丢失，若不及时释放之前p指向的动态内存，会造成内存泄漏。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//若要清空结构体，则逐个清空。</span></span><br><span class="line">    stt.a = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(stt.p, <span class="number">0</span>, <span class="number">100</span> * <span class="built_in">sizeof</span>(<span class="type">int</span>));    <span class="comment">// 清空p指向的动态内存</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="共同体"><a href="#共同体" class="headerlink" title="共同体"></a>共同体</h2><p>共同体（共用体、联合体）是一种特殊的结构体，它能存储不同的数据类型的成员，但是，在同一时间只能存储其中的一个成员的值。</p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>声明一个 Data 联合体，它可以容纳一个 int、一个 float，或一个 char，但同一时刻只能存储其中一个。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">Data</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="type">float</span> f;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>所有成员共用同一块内存地址。</li>
+<li>占用的空间等于最大成员的大小，同时要注意内存对齐的问题。</li>
+<li>在同一时间点，只能有一个成员的数据是有效的。访问其他成员会出现未定义行为。</li>
+<li>匿名共同体没有名字，可以在定义的时候创建匿名共同体变量（VS和Linux有差别），也可以嵌入结构体中，并可以通过结构体变量直接访问共同体成员。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> <span class="title class_">udata</span>&#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">float</span> b;</span><br><span class="line">    <span class="type">char</span> c[<span class="number">21</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    udata data;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 三个成员的地址是相同的。</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;data.a的地址是：&quot;</span> &lt;&lt; (<span class="type">void</span>*)&amp;data.a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;data.b的地址是：&quot;</span> &lt;&lt; (<span class="type">void</span>*)&amp;data.b &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;data.c的地址是：&quot;</span> &lt;&lt; (<span class="type">void</span>*)&amp;data.c &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 占用的空间等于最大成员的大小，也就是成员c的大小占21字节，但是由于内存对齐，以8字节为单位，所以data占24字节。</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;sizeof(data)=&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(data) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    data.a = <span class="number">10</span>;    <span class="comment">// 赋值给成员a</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;a = &quot;</span> &lt;&lt; data.a &lt;&lt; endl;      <span class="comment">// 输出成员a的值10</span></span><br><span class="line">    data.b = <span class="number">5.5</span>;   <span class="comment">// 赋值给成员b</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;a = &quot;</span> &lt;&lt; data.a &lt;&lt; endl;      <span class="comment">// 输出成员a的值是无意义的乱码，因为成员b占用内存，覆盖了成员a的值。</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;b = &quot;</span> &lt;&lt; data.b &lt;&lt; endl;      <span class="comment">// 输出成员b的值5.5</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//匿名共同体嵌入结构体中</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">MyStruct</span> &#123;</span><br><span class="line">        <span class="keyword">union</span> &#123;</span><br><span class="line">            <span class="type">int</span> i;</span><br><span class="line">            <span class="type">float</span> f;</span><br><span class="line">        &#125;; <span class="comment">// 只有匿名联合体嵌入结构体中，成员才能直接可访问</span></span><br><span class="line">    &#125;;</span><br><span class="line">    MyStruct s;</span><br><span class="line">    s.i = <span class="number">42</span>;            <span class="comment">// 可以通过结构体变量直接访问共同体成员 i</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//普通共同体嵌入结构体中</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">MyStruct</span> &#123;</span><br><span class="line">        <span class="type">int</span> tag;</span><br><span class="line">        <span class="keyword">union</span> <span class="title class_">Data</span> &#123;</span><br><span class="line">            <span class="type">int</span> i;</span><br><span class="line">            <span class="type">float</span> f;</span><br><span class="line">        &#125; u;  <span class="comment">// 有名字：u</span></span><br><span class="line">    &#125;;</span><br><span class="line">    MyStruct s;</span><br><span class="line">    s.tag = <span class="number">0</span>;</span><br><span class="line">    s.u.i = <span class="number">42</span>;          <span class="comment">// 必须通过 union 的名字访问其成员</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><ul>
+<li>当一个数据结构中，同一时刻只会使用其中一个变量，可以用 union 减少内存开销。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">EventType</span> &#123; MouseEvent, KeyEvent &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Mouse</span> &#123;</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Key</span> &#123;</span><br><span class="line">    <span class="type">char</span> keycode;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Event</span> &#123;</span><br><span class="line">    EventType type;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">union</span> &#123;</span><br><span class="line">        Mouse mouse;</span><br><span class="line">        Key key;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">handleEvent</span><span class="params">(<span class="type">const</span> Event&amp; e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.type == MouseEvent) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Mouse at (&quot;</span> &lt;&lt; e.mouse.x &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; e.mouse.y &lt;&lt; <span class="string">&quot;)\n&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (e.type == KeyEvent) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Key pressed: &quot;</span> &lt;&lt; e.key.keycode &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用于回调函数的参数（相当于支持多种数据类型）。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/" data-id="cmdohx9hn000e30w83ja8a01s" data-title="结构体" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据结构与算法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/06/29/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">动态分配内存</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/">引用</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/">枚举</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构与算法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/29/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98/">动态分配内存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

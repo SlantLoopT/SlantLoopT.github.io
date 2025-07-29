@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>数组 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="数组1.定义初始化数组数组是一种符合类型，数组声明形如a[d]，a为数组名字，d是数组的维数，其中维度必须是一个常量表达式。 常量表达式123456789101112131415161718192021字面值（literal）是指在代码中直接表示的常量值。42（整数字面值）&#x27;A&#x27;（字符字面值）&quot;Hello&quot;（字符串字面值）3.14（浮点字面值）。这些字面值在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http://example.com/2025/04/09/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数组1.定义初始化数组数组是一种符合类型，数组声明形如a[d]，a为数组名字，d是数组的维数，其中维度必须是一个常量表达式。 常量表达式123456789101112131415161718192021字面值（literal）是指在代码中直接表示的常量值。42（整数字面值）&#x27;A&#x27;（字符字面值）&quot;Hello&quot;（字符串字面值）3.14（浮点字面值）。这些字面值在">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-09T08:31:50.529Z">
+<meta property="article:modified_time" content="2025-04-10T12:48:28.642Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C++学习笔记/数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/09/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E7%BB%84/" class="article-date">
+  <time class="dt-published" datetime="2025-04-09T08:31:50.529Z" itemprop="datePublished">2025-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      数组
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h4 id="1-定义初始化数组"><a href="#1-定义初始化数组" class="headerlink" title="1.定义初始化数组"></a>1.定义初始化数组</h4><p>数组是一种符合类型，数组声明形如a[d]，a为数组名字，d是数组的维数，其中维度必须是一个常量表达式。</p>
+<h5 id="常量表达式"><a href="#常量表达式" class="headerlink" title="常量表达式"></a>常量表达式</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">字面值（literal）是指在代码中直接表示的常量值。</span><br><span class="line"><span class="number">42</span>（整数字面值）</span><br><span class="line"><span class="string">&#x27;A&#x27;</span>（字符字面值）</span><br><span class="line"><span class="string">&quot;Hello&quot;</span>（字符串字面值）</span><br><span class="line"><span class="number">3.14</span>（浮点字面值）。</span><br><span class="line">这些字面值在编译时是已知的，并且它们的值在整个程序运行期间不可改变，因此它们通常是常量表达式。</span><br><span class="line">此外由 <span class="keyword">constexpr</span> 作为一个函数声明或变量声明前的修饰符，表示这个函数或变量必须在编译时求值。</span><br><span class="line"><span class="comment">//常量表达式变量</span></span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> size = <span class="number">10</span>;  <span class="comment">// size 在编译时计算并固定为 10</span></span><br><span class="line"><span class="type">int</span> arr[size];             <span class="comment">// 合法，arr 的大小在编译时确定</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//常量表达式函数</span></span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="type">int</span> <span class="title">square</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">constexpr</span> <span class="type">int</span> b = <span class="built_in">square</span>(<span class="number">3</span>);  <span class="comment">// square(3) 在编译时计算</span></span><br><span class="line">    <span class="type">int</span> arr[<span class="built_in">square</span>(<span class="number">3</span>)];           <span class="comment">// arr 的大小在编译时确定</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="数组默认初始化"><a href="#数组默认初始化" class="headerlink" title="数组默认初始化"></a>数组默认初始化</h5><h6 id="1-局部数组"><a href="#1-局部数组" class="headerlink" title="1.局部数组"></a>1.局部数组</h6><p>局部数组（在函数内部声明的数组）如果没有初始化，它们的元素会包含垃圾值（即未初始化的内存内容）。这种情况下，数组的内容是不可预测的，使用这些数组时可能会导致未定义行为。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> arr[<span class="number">5</span>];  <span class="comment">// 未初始化的局部数组</span></span><br><span class="line">    cout &lt;&lt; arr[<span class="number">0</span>];  <span class="comment">// 输出垃圾值，未定义行为</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-全局数组"><a href="#2-全局数组" class="headerlink" title="2.全局数组"></a>2.全局数组</h6><p>如果数组是全局变量或静态变量，那么它们的元素会自动初始化为零。C++ 保证这种类型的数组元素的默认值是零（对于数值类型），或是 NULL&#x2F;nullptr（对于指针类型）。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> arr[<span class="number">5</span>];  <span class="comment">// 全局数组，自动初始化为 0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; arr[<span class="number">0</span>];  <span class="comment">// 输出 0，因为它是全局变量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="3-局部静态数组"><a href="#3-局部静态数组" class="headerlink" title="3.局部静态数组"></a>3.局部静态数组</h6><p>如果数组是局部静态变量（即通过 static 关键字声明的变量），它的元素也会自动初始化为零。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> arr[<span class="number">5</span>];  <span class="comment">// 局部静态数组，自动初始化为 0</span></span><br><span class="line">    cout &lt;&lt; arr[<span class="number">0</span>];     <span class="comment">// 输出 0，因为它是静态变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="4-动态分配的数组"><a href="#4-动态分配的数组" class="headerlink" title="4.动态分配的数组"></a>4.动态分配的数组</h6><p>如果使用 new 操作符动态分配数组（例如 new int[5]），数组的元素是未初始化的，它们包含垃圾值，除非使用 new 时指定初始化值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span>* arr = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">5</span>];  <span class="comment">// 动态分配数组，元素未初始化</span></span><br><span class="line">    cout &lt;&lt; arr[<span class="number">0</span>];  <span class="comment">// 输出垃圾值</span></span><br><span class="line">    <span class="keyword">delete</span>[] arr;    <span class="comment">// 记得释放内存</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="如果在声明时没有指明维度，编译器会根据初始值的数量计算并推测"><a href="#如果在声明时没有指明维度，编译器会根据初始值的数量计算并推测" class="headerlink" title="如果在声明时没有指明维度，编译器会根据初始值的数量计算并推测"></a>如果在声明时没有指明维度，编译器会根据初始值的数量计算并推测</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>&#125;;      <span class="comment">//维度是3的数组</span></span><br><span class="line"><span class="type">int</span> a[<span class="number">5</span>] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>&#125;;     <span class="comment">//等价与&#123;0，1，2，0，0&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//字符数组的特殊性</span></span><br><span class="line"><span class="type">char</span> a1[] = &#123;<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;+&#x27;</span>,<span class="string">&#x27;+&#x27;</span>&#125;;      <span class="comment">//维度是3</span></span><br><span class="line"><span class="type">char</span> a2[] = &#123;<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;+&#x27;</span>,<span class="string">&#x27;+&#x27;</span>,<span class="string">&#x27;\0&#x27;</span>&#125;;     <span class="comment">//维度是4</span></span><br><span class="line"><span class="type">char</span> a3[] = <span class="string">&quot;c++&quot;</span>;      <span class="comment">//字符串字面值初始化自带\0，维度是4</span></span><br></pre></td></tr></table></figure>
+<h5 id="不能将数组内容拷贝给其他数组作为其初始值，也不能用数组为其他数组赋值"><a href="#不能将数组内容拷贝给其他数组作为其初始值，也不能用数组为其他数组赋值" class="headerlink" title="不能将数组内容拷贝给其他数组作为其初始值，也不能用数组为其他数组赋值"></a>不能将数组内容拷贝给其他数组作为其初始值，也不能用数组为其他数组赋值</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span> b[] = a;        <span class="comment">//错误</span></span><br><span class="line">b = a;      <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-数组与指针"><a href="#2-数组与指针" class="headerlink" title="2.数组与指针"></a>2.数组与指针</h4><p>数组的名字本身是一个指向首元素的指针</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>* p = arr;  <span class="comment">// p == &amp;arr[0]</span></span><br></pre></td></tr></table></figure>
+<p>下标与指针</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//与标准库string、vector不同，他们的下标必须是无符号类型，而数组的下标可以处理负数。</span></span><br><span class="line"><span class="type">int</span> arr[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>* p = arr;  <span class="comment">// 等价于 p == &amp;arr[0]</span></span><br><span class="line"><span class="type">int</span> *p2 = p + <span class="number">2</span>;     <span class="comment">//p2指向元素arr[2] 3</span></span><br><span class="line"><span class="type">int</span> i = *(p + <span class="number">2</span>);     <span class="comment">//等价于 i = arr[2]</span></span><br><span class="line"><span class="type">int</span> *p3 = &amp;arr[<span class="number">1</span>];      <span class="comment">//p3指向arr[1]</span></span><br><span class="line"><span class="type">int</span> j = p3[<span class="number">1</span>];      <span class="comment">//p3[1]等价于*(p+1) arr[2] 3</span></span><br><span class="line"><span class="type">int</span> l = p3[<span class="number">-1</span>];     <span class="comment">//p3[-1]等价于*（p-1) arr[0] 1</span></span><br><span class="line"><span class="built_in">int</span> (*p)[<span class="number">3</span>] = &amp;arr;        <span class="comment">//p指向arr</span></span><br><span class="line"><span class="type">int</span> k = (*p)[<span class="number">2</span>];        <span class="comment">//*p为数组（或指向数组第一个元素的指针）（*p)[2]指向数组第三个元素</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-标准库函数begin和end"><a href="#3-标准库函数begin和end" class="headerlink" title="3.标准库函数begin和end"></a>3.标准库函数begin和end</h4><p>与迭代器的begin和end不同，他们不是成员函数，而是将数组作为他们的参数，功能上与迭代器的begin，end类似。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span> *beg = <span class="built_in">begin</span>(a);        <span class="comment">//返回指向数组a首元素的指针</span></span><br><span class="line"><span class="type">int</span> *last = <span class="built_in">end</span>(a);         <span class="comment">//返回指向数组a尾元素的下一位置的指针</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-多维数组"><a href="#4-多维数组" class="headerlink" title="4.多维数组"></a>4.多维数组</h4><h5 id="完全初始化"><a href="#完全初始化" class="headerlink" title="完全初始化"></a>完全初始化</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">2</span>][<span class="number">3</span>] = &#123;</span><br><span class="line">    &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;,</span><br><span class="line">    &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> arr[<span class="number">2</span>][<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;  <span class="comment">// 线性初始化，按行填充</span></span><br></pre></td></tr></table></figure>
+<h5 id="部分初始化"><a href="#部分初始化" class="headerlink" title="部分初始化"></a>部分初始化</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果初始化的元素不足，剩余元素会自动初始化为零（对于基本类型）</span></span><br><span class="line"><span class="type">int</span> arr[<span class="number">2</span>][<span class="number">3</span>] = &#123;</span><br><span class="line">    &#123;<span class="number">1</span>&#125;,    <span class="comment">// 第一行是 &#123;1, 0, 0&#125;</span></span><br><span class="line">    &#123;<span class="number">4</span>, <span class="number">5</span>&#125;  <span class="comment">// 第二行是 &#123;4, 5, 0&#125;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="默认初始化"><a href="#默认初始化" class="headerlink" title="默认初始化"></a>默认初始化</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">2</span>][<span class="number">3</span>];  <span class="comment">// 局部变量，未初始化，元素为垃圾值 ❌</span></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> arr[<span class="number">2</span>][<span class="number">3</span>];  <span class="comment">//  全局或静态数组所有元素都初始化为 0 ✅</span></span><br></pre></td></tr></table></figure>
+<h5 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h5><p>多维数组实际上是数组的数组(指针的指针、数组的指针)，所以多维数组名转换得来的指针实际上是指向第一个内层数组的指针</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">3</span>][<span class="number">4</span>];        <span class="comment">//由3个含4个int型元素的数组组成，a指向第一个含4个int型元素的数组，是数组的指针</span></span><br><span class="line"><span class="keyword">auto</span> p = a;     <span class="comment">//p指向指向第一个含4个int型元素的数组，是数组的指针</span></span><br><span class="line"><span class="keyword">auto</span> q = *p；       <span class="comment">//p是数组的指针，*p就是这个数组，这个数组转换成指针就是指向第一个元素的指针q</span></span><br></pre></td></tr></table></figure>
+<p>遍历二维数组</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> arr[<span class="number">2</span>][<span class="number">3</span>] = &#123;</span><br><span class="line">        &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;,</span><br><span class="line">        &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; row : arr) &#123;       <span class="comment">//使用引用类型是为了防止row类型自动转换为指针，使得内层循环出错，再用const表示常量引用不修改原值。row的类型为const int (&amp;)[3]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> val : row) &#123;           <span class="comment">//val未使用引用类型，表示不需要修改原值</span></span><br><span class="line">            cout &lt;&lt; val &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用迭代器</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> p = <span class="built_in">begin</span>(arr); p != <span class="built_in">end</span>(arr); ++p)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> q = <span class="built_in">begin</span>(*p); q != <span class="built_in">end</span>(*p); q++)&#123;</span><br><span class="line">            cout &lt;&lt; q &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/04/09/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E7%BB%84/" data-id="cmdohx9he000930w8gfd63mlz" data-title="数组" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/04/09/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/04/06/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/vector/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vector</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/">引用</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/">枚举</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构与算法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/29/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98/">动态分配内存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

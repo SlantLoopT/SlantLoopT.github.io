@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>字符串 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="string1.定义初始化string对象默认初始化1string s1;     &#x2F;&#x2F;默认为空串 拷贝初始化12string s2 &#x3D; &quot;Hello&quot;;       &#x2F;&#x2F;字符串字面值以\0结尾，不是string类型，但string对象的初始化会去掉\0string s2 &#x3D; s1;     &#x2F;&#x2F;s2是s1的副本 直接初始化123string s2(&quot;World&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串">
+<meta property="og:url" content="http://example.com/2025/04/06/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/string/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="string1.定义初始化string对象默认初始化1string s1;     &#x2F;&#x2F;默认为空串 拷贝初始化12string s2 &#x3D; &quot;Hello&quot;;       &#x2F;&#x2F;字符串字面值以\0结尾，不是string类型，但string对象的初始化会去掉\0string s2 &#x3D; s1;     &#x2F;&#x2F;s2是s1的副本 直接初始化123string s2(&quot;World&amp;qu">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-05T16:13:23.631Z">
+<meta property="article:modified_time" content="2025-04-06T09:50:17.454Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C++学习笔记/string" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/06/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/string/" class="article-date">
+  <time class="dt-published" datetime="2025-04-05T16:13:23.631Z" itemprop="datePublished">2025-04-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      字符串
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><h4 id="1-定义初始化string对象"><a href="#1-定义初始化string对象" class="headerlink" title="1.定义初始化string对象"></a>1.定义初始化string对象</h4><h5 id="默认初始化"><a href="#默认初始化" class="headerlink" title="默认初始化"></a>默认初始化</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string s1;     <span class="comment">//默认为空串</span></span><br></pre></td></tr></table></figure>
+<h5 id="拷贝初始化"><a href="#拷贝初始化" class="headerlink" title="拷贝初始化"></a>拷贝初始化</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string s2 = <span class="string">&quot;Hello&quot;</span>;       <span class="comment">//字符串字面值以\0结尾，不是string类型，但string对象的初始化会去掉\0</span></span><br><span class="line">string s2 = s1;     <span class="comment">//s2是s1的副本</span></span><br></pre></td></tr></table></figure>
+<h5 id="直接初始化"><a href="#直接初始化" class="headerlink" title="直接初始化"></a>直接初始化</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">s2</span><span class="params">(<span class="string">&quot;World&quot;</span>)</span></span>;        <span class="comment">//字符串字面值以\0结尾，不是string类型，但string对象的初始化会去掉\0</span></span><br><span class="line"><span class="function">string <span class="title">str5</span><span class="params">(<span class="number">5</span>, <span class="string">&#x27;X&#x27;</span>)</span></span>;        <span class="comment">// 5个重复的X =&gt; XXXXX</span></span><br><span class="line"><span class="function">string <span class="title">str4</span><span class="params">(<span class="string">&quot;abcdef&quot;</span>, <span class="number">3</span>)</span></span>;  <span class="comment">// 只取前三个字符 =&gt; &quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
+<h5 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string s3&#123;<span class="string">&quot;Hi&quot;</span>&#125;;        <span class="comment">//等价于 string s = &quot;Hi&quot;;</span></span><br><span class="line">string s&#123;<span class="number">5</span>, <span class="string">&#x27;A&#x27;</span>&#125;;       <span class="comment">// ❗ 看上去像是 &quot;AAAAA&quot;，但实际是不同的！这会调用初始化列表函数，输出结果为A</span></span><br></pre></td></tr></table></figure>
+<h5 id="初始化列表"><a href="#初始化列表" class="headerlink" title="初始化列表"></a>初始化列表</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//std::string 的构造函数 std::string(std::initializer_list&lt;char&gt;) 是 C++11 引入的，允许通过 初始化列表 来构造 std::string 对象。</span></span><br><span class="line">string s1&#123;<span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;o&#x27;</span>&#125;;        <span class="comment">//输出 &quot;Hello&quot;</span></span><br></pre></td></tr></table></figure>
+<h5 id="用-char-初始化"><a href="#用-char-初始化" class="headerlink" title="用 char[] 初始化"></a>用 char[] 初始化</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> cstr[] = <span class="string">&quot;World&quot;</span>;</span><br><span class="line"><span class="function">string <span class="title">str2</span><span class="params">(cstr)</span></span>;     <span class="comment">// OK，自动转换</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-读写string对象"><a href="#2-读写string对象" class="headerlink" title="2.读写string对象"></a>2.读写string对象</h4><h5 id="使用-std-cin（读取一个单词）"><a href="#使用-std-cin（读取一个单词）" class="headerlink" title="使用 std::cin（读取一个单词）"></a>使用 std::cin（读取一个单词）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::string name;</span><br><span class="line">std::cin &gt;&gt; name;  <span class="comment">// 忽略开头空白并从第一个真正的字符开始读起，遇到下一处空白停止</span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;You entered: &quot;</span> &lt;&lt; name &lt;&lt; std::endl;      <span class="comment">//输出结果没有任何空格</span></span><br></pre></td></tr></table></figure>
+<h5 id="使用-std-getline（读取整行）"><a href="#使用-std-getline（读取整行）" class="headerlink" title="使用 std::getline（读取整行）"></a>使用 std::getline（读取整行）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::string line;</span><br><span class="line">std::<span class="built_in">getline</span>(std::cin, line);  <span class="comment">// 读取整行，包括空格</span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;You entered: &quot;</span> &lt;&lt; line &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<h5 id="使用-std-stringstream-进行读写（像操作文件一样操作-string）"><a href="#使用-std-stringstream-进行读写（像操作文件一样操作-string）" class="headerlink" title="使用 std::stringstream 进行读写（像操作文件一样操作 string）"></a>使用 std::stringstream 进行读写（像操作文件一样操作 string）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//写入字符串流</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::stringstream ss;</span><br><span class="line">    ss &lt;&lt; <span class="string">&quot;Hello &quot;</span> &lt;&lt; <span class="number">123</span> &lt;&lt; <span class="string">&quot; world!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    std::string result = ss.<span class="built_in">str</span>();  <span class="comment">// 获取完整字符串</span></span><br><span class="line">    std::cout &lt;&lt; result &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//从字符串流中读取</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::string input = <span class="string">&quot;123 456&quot;</span>;</span><br><span class="line">    <span class="function">std::stringstream <span class="title">ss</span><span class="params">(input)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    ss &gt;&gt; a &gt;&gt; b;</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;a: &quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot;, b: &quot;</span> &lt;&lt; b &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="从文件读写字符串"><a href="#从文件读写字符串" class="headerlink" title="从文件读写字符串"></a>从文件读写字符串</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">std::ofstream <span class="title">out</span><span class="params">(<span class="string">&quot;test.txt&quot;</span>)</span></span>;</span><br><span class="line">    out &lt;&lt; <span class="string">&quot;This is a test string.&quot;</span>;</span><br><span class="line">    out.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function">std::ifstream <span class="title">in</span><span class="params">(<span class="string">&quot;test.txt&quot;</span>)</span></span>;</span><br><span class="line">    std::string content;</span><br><span class="line">    std::<span class="built_in">getline</span>(in, content);</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Read from file: &quot;</span> &lt;&lt; content &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-string对象上的操作"><a href="#3-string对象上的操作" class="headerlink" title="3.string对象上的操作"></a>3.string对象上的操作</h4><h5 id="访问字符"><a href="#访问字符" class="headerlink" title="访问字符"></a>访问字符</h5><p>通过下标操作符来访问和修改字符。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//s[n]返回s中的n个字符的引用,n从0开始算起</span></span><br><span class="line">std::string s = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"><span class="type">char</span> c = s[<span class="number">0</span>];    <span class="comment">// 访问字符 &#x27;H&#x27;</span></span><br><span class="line">s[<span class="number">1</span>] = <span class="string">&#x27;a&#x27;</span>;       <span class="comment">// 修改字符 &#x27;e&#x27; 为 &#x27;a&#x27;</span></span><br></pre></td></tr></table></figure>
+<h5 id="连接字符串（-和-操作符）"><a href="#连接字符串（-和-操作符）" class="headerlink" title="连接字符串（+ 和 +&#x3D; 操作符）"></a>连接字符串（+ 和 +&#x3D; 操作符）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">std::string s1 = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">std::string s2 = <span class="string">&quot; world!&quot;</span>;</span><br><span class="line">std::string s3 = s1 + s2;  <span class="comment">// 使用 `+` 连接</span></span><br><span class="line">s1 += s2;                  <span class="comment">// 使用 `+=` 连接</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//字面值与string对象相加，必须保证+俩侧至少有一个是string对象</span></span><br><span class="line">string s4 = <span class="string">&quot;helllo&quot;</span> + <span class="string">&quot;aeq&quot;</span>;        <span class="comment">//错误</span></span><br><span class="line">string s5 = (s1 + <span class="string">&quot;qw&quot;</span>) + <span class="string">&quot;hi&quot;</span>;      <span class="comment">//正确</span></span><br><span class="line">string s6 = (<span class="string">&quot;hello&quot;</span> + <span class="string">&quot;ee&quot;</span>) + s2;      <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
+<h5 id="获取字符串长度（length-或-size-）"><a href="#获取字符串长度（length-或-size-）" class="headerlink" title="获取字符串长度（length() 或 size()）"></a>获取字符串长度（length() 或 size()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"><span class="type">size_t</span> len = s.<span class="built_in">length</span>();  <span class="comment">// 或 s.size()</span></span><br></pre></td></tr></table></figure>
+<h5 id="检查字符串是否为空（empty-）"><a href="#检查字符串是否为空（empty-）" class="headerlink" title="检查字符串是否为空（empty()）"></a>检查字符串是否为空（empty()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"><span class="keyword">if</span> (s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;String is empty!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;String is not empty!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="查找子字符串（find-）"><a href="#查找子字符串（find-）" class="headerlink" title="查找子字符串（find()）"></a>查找子字符串（find()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//std::string::npos 是 std::string 类中的一个常量，它的值(-1)等于 size_t 的最大值,代表无效的位置，通常用于查找操作失败时.</span></span><br><span class="line">std::string s = <span class="string">&quot;Hello, world!&quot;</span>;</span><br><span class="line"><span class="type">size_t</span> pos = s.<span class="built_in">find</span>(<span class="string">&quot;world&quot;</span>);  <span class="comment">// 查找 &quot;world&quot; 的位置</span></span><br><span class="line"><span class="keyword">if</span> (pos != std::string::npos) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;&#x27;world&#x27; found at position: &quot;</span> &lt;&lt; pos &lt;&lt; std::endl;     <span class="comment">//&quot;world&quot; found at position: 7</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="查找字符（find-first-of-和-find-last-of-）"><a href="#查找字符（find-first-of-和-find-last-of-）" class="headerlink" title="查找字符（find_first_of() 和 find_last_of()）"></a>查找字符（find_first_of() 和 find_last_of()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;Hello, world!&quot;</span>;</span><br><span class="line"><span class="type">size_t</span> pos = s.<span class="built_in">find_first_of</span>(<span class="string">&quot;o&quot;</span>);  <span class="comment">// 查找第一个 &#x27;o&#x27;</span></span><br><span class="line"><span class="type">size_t</span> last_pos = s.<span class="built_in">find_last_of</span>(<span class="string">&quot;o&quot;</span>);  <span class="comment">// 查找最后一个 &#x27;o&#x27;</span></span><br></pre></td></tr></table></figure>
+<h5 id="替换子字符串（replace-）"><a href="#替换子字符串（replace-）" class="headerlink" title="替换子字符串（replace()）"></a>替换子字符串（replace()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;Hello, world!&quot;</span>;</span><br><span class="line">s.<span class="built_in">replace</span>(<span class="number">7</span>, <span class="number">5</span>, <span class="string">&quot;C++&quot;</span>);  <span class="comment">// 从索引 7 开始替换 5 个字符为 &quot;C++&quot;</span></span><br><span class="line">std::cout &lt;&lt; s;         <span class="comment">//Hello, C++!</span></span><br></pre></td></tr></table></figure>
+<h5 id="获取子字符串（substr-）"><a href="#获取子字符串（substr-）" class="headerlink" title="获取子字符串（substr()）"></a>获取子字符串（substr()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;Hello, world!&quot;</span>;</span><br><span class="line">std::string sub = s.<span class="built_in">substr</span>(<span class="number">7</span>, <span class="number">5</span>);  <span class="comment">// 从位置 7 开始，获取 5 个字符 &quot;world&quot;</span></span><br><span class="line">std::cout &lt;&lt; sub &lt;&lt; std::endl;      <span class="comment">//world</span></span><br></pre></td></tr></table></figure>
+<h5 id="删除指定位置的字符（erase-）"><a href="#删除指定位置的字符（erase-）" class="headerlink" title="删除指定位置的字符（erase()）"></a>删除指定位置的字符（erase()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;Hello, world!&quot;</span>;</span><br><span class="line">s.<span class="built_in">erase</span>(<span class="number">5</span>, <span class="number">2</span>);  <span class="comment">// 从位置 5 开始删除 2 个字符（&quot;, &quot;）</span></span><br><span class="line">std::cout &lt;&lt; s &lt;&lt; std::endl;  <span class="comment">// 输出 &quot;Helloworld!&quot;</span></span><br></pre></td></tr></table></figure>
+<h5 id="插入字符或字符串（insert-）"><a href="#插入字符或字符串（insert-）" class="headerlink" title="插入字符或字符串（insert()）"></a>插入字符或字符串（insert()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;Hello!&quot;</span>;</span><br><span class="line">s.<span class="built_in">insert</span>(<span class="number">5</span>, <span class="string">&quot;, world&quot;</span>);  <span class="comment">// 在位置 5 插入 &quot;, world&quot;</span></span><br><span class="line">std::cout &lt;&lt; s &lt;&lt; std::endl;  <span class="comment">// 输出 &quot;Hello, world!&quot;</span></span><br></pre></td></tr></table></figure>
+<h5 id="转化大小写"><a href="#转化大小写" class="headerlink" title="转化大小写"></a>转化大小写</h5><p>std::transform(输入起点, 输入终点, 输出起点, 转换函数);<br>把“输入区间”里的每个元素经过“转换函数”，写到“输出位置”。是否原地修改，看输出位置设不设为和输入一样,设置输入位置和输出位置不一样时，表示你想把“处理后的结果”写入另一个地方，不修改原始数据。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">std::<span class="built_in">transform</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>(), s.<span class="built_in">begin</span>(), ::toupper);  <span class="comment">// 转为大写</span></span><br><span class="line">std::cout &lt;&lt; s &lt;&lt; std::endl;  <span class="comment">// 输出 &quot;HELLO&quot;</span></span><br><span class="line"></span><br><span class="line">std::<span class="built_in">transform</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>(), s.<span class="built_in">begin</span>(), ::tolower);  <span class="comment">// 转为小写</span></span><br><span class="line">std::cout &lt;&lt; s &lt;&lt; std::endl;  <span class="comment">// 输出 &quot;hello&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//等价写法</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">char</span> &amp;ch : s) &#123;</span><br><span class="line">    ch = std::<span class="built_in">toupper</span>(ch);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="字符串转换为数字"><a href="#字符串转换为数字" class="headerlink" title="字符串转换为数字"></a>字符串转换为数字</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;123&quot;</span>;</span><br><span class="line"><span class="type">int</span> num = std::<span class="built_in">stoi</span>(s);  <span class="comment">// 将字符串转换为整数</span></span><br><span class="line"></span><br><span class="line">std::string s = <span class="string">&quot;3.14&quot;</span>;</span><br><span class="line"><span class="type">float</span> pi = std::<span class="built_in">stof</span>(s);  <span class="comment">// 将字符串转换为浮点数</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> num = <span class="number">123</span>;</span><br><span class="line">std::string str = std::<span class="built_in">to_string</span>(num);  <span class="comment">// 将整数转换为字符串</span></span><br></pre></td></tr></table></figure>
+<h5 id="删除前导和尾随空白字符（erase-和-find-first-not-of-）"><a href="#删除前导和尾随空白字符（erase-和-find-first-not-of-）" class="headerlink" title="删除前导和尾随空白字符（erase() 和 find_first_not_of()）"></a>删除前导和尾随空白字符（erase() 和 find_first_not_of()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::string s = <span class="string">&quot;   Hello, world!   &quot;</span>;</span><br><span class="line">s.<span class="built_in">erase</span>(<span class="number">0</span>, s.<span class="built_in">find_first_not_of</span>(<span class="string">&quot; &quot;</span>));  <span class="comment">// 删除前导空白</span></span><br><span class="line">s.<span class="built_in">erase</span>(s.<span class="built_in">find_last_not_of</span>(<span class="string">&quot; &quot;</span>) + <span class="number">1</span>);  <span class="comment">// 删除尾随空白</span></span><br><span class="line">std::cout &lt;&lt; s &lt;&lt; std::endl;  <span class="comment">// 输出 &quot;Hello, world!&quot;</span></span><br></pre></td></tr></table></figure>
+<h5 id="比较两个字符串（compare-）"><a href="#比较两个字符串（compare-）" class="headerlink" title="比较两个字符串（compare()）"></a>比较两个字符串（compare()）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::string s1 = <span class="string">&quot;apple&quot;</span>;</span><br><span class="line">std::string s2 = <span class="string">&quot;banana&quot;</span>;</span><br><span class="line"><span class="type">int</span> result = s<span class="number">1.</span><span class="built_in">compare</span>(s2);  <span class="comment">// 比较 s1 和 s2</span></span><br></pre></td></tr></table></figure>
+<h5 id="读取未知数量的string对象"><a href="#读取未知数量的string对象" class="headerlink" title="读取未知数量的string对象"></a>读取未知数量的string对象</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string word;</span><br><span class="line"><span class="keyword">while</span>(cin &gt;&gt; word)</span><br><span class="line">    cout &lt;&lt; word &lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<h5 id="范围for语句访问或修改string对象中的字符"><a href="#范围for语句访问或修改string对象中的字符" class="headerlink" title="范围for语句访问或修改string对象中的字符"></a>范围for语句访问或修改string对象中的字符</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string s = <span class="string">&quot;hello&quot;</span></span><br><span class="line"><span class="comment">//访问不修改</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> c : s) &#123;</span><br><span class="line">    cout &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//访问并修改</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c : s) &#123;</span><br><span class="line">    c = <span class="built_in">toupper</span>(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-size-type"><a href="#4-size-type" class="headerlink" title="4.size_type"></a>4.size_type</h4><p>size_type 是专门用于表示容器大小的无符号整数类型<br>size函数返回的是std::size_type类型的值</p>
+<h4 id="5-string、字符数组与C风格字符串"><a href="#5-string、字符数组与C风格字符串" class="headerlink" title="5.string、字符数组与C风格字符串"></a>5.string、字符数组与C风格字符串</h4><p>字符数组 是一种数据结构（char 类型的数组），不一定是字符串，没有 \0 时它就是普通字符集合<br>C 风格字符串 是一种协议：以 \0 结尾的字符序列，必须以 \0 结尾，所有 C 风格字符串操作函数（如 strlen, strcpy, strcmp）都依赖这个结尾。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> arr[<span class="number">5</span>] = &#123;<span class="string">&#x27;h&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;l&#x27;</span>,<span class="string">&#x27;l&#x27;</span>,<span class="string">&#x27;o&#x27;</span>&#125;	        <span class="comment">//✅ 是字符数组	❌ 不是字符串（没 \0）</span></span><br><span class="line"><span class="type">char</span> str[<span class="number">6</span>] = <span class="string">&quot;hello&quot;</span>	        <span class="comment">//✅ 是字符数组	✅ 是 C 字符串</span></span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* s = <span class="string">&quot;hi&quot;</span>	    <span class="comment">//✅ 是指针	✅ 是 C 字符串</span></span><br></pre></td></tr></table></figure>
+<h5 id="互相转换"><a href="#互相转换" class="headerlink" title="互相转换"></a>互相转换</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//std::string → C 风格字符串</span></span><br><span class="line">std::string s = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* cstr = s.<span class="built_in">c_str</span>();  <span class="comment">// 返回 const char* | h | e | l | l | o | \0 |</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//C 风格字符串 → std::string</span></span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* cstr = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">std::string s = cstr;       <span class="comment">//| h | e | l | l | o |</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//char[] → std::string</span></span><br><span class="line"><span class="type">char</span> arr[] = <span class="string">&quot;hello&quot;</span>;       <span class="comment">//字面值初始化字符数组带有\0  | h | e | l | l | o | \0 |</span></span><br><span class="line">std::string s = arr;        <span class="comment">//| h | e | l | l | o |</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/04/06/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/string/" data-id="cmdohx9ha000330w87mmv5rwq" data-title="字符串" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/04/06/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/vector/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vector
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/28/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据类型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/">引用</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/">枚举</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构与算法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/29/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98/">动态分配内存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

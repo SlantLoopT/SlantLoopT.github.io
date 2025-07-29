@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>引用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="引用引用是已定义的变量的别名，主要用途是用作函数的形参和返回值。声明引用的语法： 数据类型 &amp;引用名&#x3D;原变量名; 注意事项 引用的数据类型要与原变量名的数据类型相同。 引用名和原变量名可以互换，它们值和内存单元是相同的。 必须在声明引用的时候初始化，初始化后不可改变。  1234567891011int a &#x3D; 3;          &#x2F;&#x2F; 声明普通的整型变量。int&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="引用">
+<meta property="og:url" content="http://example.com/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="引用引用是已定义的变量的别名，主要用途是用作函数的形参和返回值。声明引用的语法： 数据类型 &amp;引用名&#x3D;原变量名; 注意事项 引用的数据类型要与原变量名的数据类型相同。 引用名和原变量名可以互换，它们值和内存单元是相同的。 必须在声明引用的时候初始化，初始化后不可改变。  1234567891011int a &#x3D; 3;          &#x2F;&#x2F; 声明普通的整型变量。int&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-18T12:06:30.636Z">
+<meta property="article:modified_time" content="2025-07-23T08:48:25.035Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C++学习笔记/引用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2025-07-18T12:06:30.636Z" itemprop="datePublished">2025-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      引用
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>引用是已定义的变量的别名，主要用途是用作函数的形参和返回值。<br><strong>声明引用的语法：</strong> 数据类型 &amp;引用名&#x3D;原变量名;</p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>引用的数据类型要与原变量名的数据类型相同。</li>
+<li>引用名和原变量名可以互换，它们值和内存单元是相同的。</li>
+<li>必须在声明引用的时候初始化，初始化后不可改变。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">3</span>;          <span class="comment">// 声明普通的整型变量。</span></span><br><span class="line"><span class="type">int</span>&amp; ra = a;      <span class="comment">// 创建引用ra，ra是a的别名。</span></span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="string">&quot; a的地址是：&quot;</span> &lt;&lt; &amp;a  &lt;&lt; <span class="string">&quot;， a的值是：&quot;</span> &lt;&lt;  a  &lt;&lt; endl;     <span class="comment">// 输出 a的地址是：0x7ffc0b7c0c08， a的值是：3</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;ra的地址是：&quot;</span> &lt;&lt; &amp;ra &lt;&lt; <span class="string">&quot;，ra的值是：&quot;</span> &lt;&lt; ra &lt;&lt; endl;      <span class="comment">// 输出ra的地址是：0x7ffc0b7c0c08，ra的值是：3</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> b = <span class="number">5</span>;</span><br><span class="line">ra = b;     <span class="comment">// 注意这里，不是让ra作为b的引用，ra已经是a的引用不能改变，此处是将b的值赋值给a。 </span></span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="string">&quot; a的地址是：&quot;</span> &lt;&lt; &amp;a &lt;&lt; <span class="string">&quot;， a的值是：&quot;</span> &lt;&lt; a &lt;&lt; endl;        <span class="comment">// 输出 a的地址是：0x7ffc0b7c0c08， a的值是：5</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;ra的地址是：&quot;</span> &lt;&lt; &amp;ra &lt;&lt; <span class="string">&quot;，ra的值是：&quot;</span> &lt;&lt; ra &lt;&lt; endl;      <span class="comment">// 输出ra的地址是：0x7ffc0b7c0c08，ra的值是：5</span></span><br></pre></td></tr></table></figure>
+<h4 id="引用的本质"><a href="#引用的本质" class="headerlink" title="引用的本质"></a>引用的本质</h4><p>引用是指针常量的伪装。<br>变量是什么？变量就是一个在程序执行过程中可以改变的量。<br>换一个角度，变量是一块内存区域的名字，它代表了这块内存区域，当我们对变量进行修改的时候，会引起内存区域中内容的改变。<br>在计算机看来，内存区域根本就不存在什么名字，它仅有的标志就是它的地址，因此我们若想修改一块内存区域的内容，只有知道他的地址才能实现。<br>所谓的变量只不过是编译器给我们进行的一种抽象，让我们不必去了解更多的细节，降低我们的思维跨度而已。<br>程序员拥有引用，但编译器仅拥有指针（地址）。<br>引用的底层机制实际上是和指针一样的。不要相信有别名，不要认为引用可以节省一个指针的空间，因为这一切不会发生，编译器还是会把引用解释为指针。<br>引用和指针本质上没有区别。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">3</span>;                 <span class="comment">// 声明普通的整型变量。</span></span><br><span class="line"><span class="type">int</span>&amp; ra = a;              <span class="comment">// 创建引用ra，ra是a的别名。               </span></span><br><span class="line"><span class="comment">// 把int&amp;替换成int* const   把a替换成&amp;a</span></span><br><span class="line"><span class="type">int</span>* <span class="type">const</span> rb = &amp;a;        <span class="comment">// 声明指针常量rb，让它指向变量a。</span></span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Address of a: &quot;</span> &lt;&lt; &amp;a  &lt;&lt; <span class="string">&quot;, Value of a: &quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Address of ra: &quot;</span> &lt;&lt; &amp;ra &lt;&lt; <span class="string">&quot;, Value of ra: &quot;</span> &lt;&lt; ra &lt;&lt; endl;     <span class="comment">// 把&amp;ra替换成ra，把ra替换成*ra</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Value of rb: &quot;</span> &lt;&lt; rb &lt;&lt; <span class="string">&quot;, Value of *rb: &quot;</span> &lt;&lt; *rb &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">ra = <span class="number">5</span>;    </span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Address of a: &quot;</span> &lt;&lt; &amp;a  &lt;&lt; <span class="string">&quot;, Value of a: &quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Address of ra: &quot;</span> &lt;&lt; &amp;ra &lt;&lt; <span class="string">&quot;, Value of ra: &quot;</span> &lt;&lt; ra &lt;&lt; endl;     </span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Value of rb: &quot;</span> &lt;&lt; rb &lt;&lt; <span class="string">&quot;, Value of *rb: &quot;</span> &lt;&lt; *rb &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输出结果全部相同：</span></span><br><span class="line"><span class="comment">Address of a: 0x65a4fff7bc, Value of a: 3</span></span><br><span class="line"><span class="comment">Address of ra: 0x65a4fff7bc, Value of ra: 3</span></span><br><span class="line"><span class="comment">Value of rb: 0x65a4fff7bc, Value of *rb: 3</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">Address of a: 0x65a4fff7bc, Value of a: 5</span></span><br><span class="line"><span class="comment">Address of ra: 0x65a4fff7bc, Value of ra: 5</span></span><br><span class="line"><span class="comment">Value of rb: 0x65a4fff7bc, Value of *rb: 5</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="引用用于函数的参数（引用传递）"><a href="#引用用于函数的参数（引用传递）" class="headerlink" title="引用用于函数的参数（引用传递）"></a>引用用于函数的参数（引用传递）</h4><p>把函数的形参声明为引用，调用函数的时候，形参将成为实参的别名，引用的本质是指针，传递的是变量的地址，在函数中，修改形参会影响实参。<br><strong>传引用的代码更简洁。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">st_girl</span>      <span class="comment">// 定义超女结构体。</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> no;            <span class="comment">// 超女编号。</span></span><br><span class="line">	string str;      <span class="comment">// 表白内容。</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func1</span><span class="params">(st_girl girl)</span>    <span class="comment">// 传值。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	girl.no = <span class="number">8</span>;</span><br><span class="line">	girl.str = <span class="string">&quot;我有一只小小鸟。&quot;</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;亲爱的&quot;</span> &lt;&lt; girl.no &lt;&lt; <span class="string">&quot;号：&quot;</span> &lt;&lt; girl.str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(st_girl *girl)</span>    <span class="comment">// 传地址。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	girl-&gt;no = <span class="number">8</span>;</span><br><span class="line">	girl-&gt;str = <span class="string">&quot;我有一只小小鸟。&quot;</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;亲爱的&quot;</span> &lt;&lt; girl-&gt;no &lt;&lt; <span class="string">&quot;号：&quot;</span> &lt;&lt; girl-&gt;str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func3</span><span class="params">(st_girl &amp; girl)</span>    <span class="comment">// 传引用。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	girl.no = <span class="number">8</span>;</span><br><span class="line">	girl.str = <span class="string">&quot;我有一只小小鸟。&quot;</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;亲爱的&quot;</span> &lt;&lt; girl.no &lt;&lt; <span class="string">&quot;号：&quot;</span> &lt;&lt; girl.str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ist_girl girl = &#123; <span class="number">3</span>,<span class="string">&quot;我是一只傻傻鸟。&quot;</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">func1</span>(girl);              <span class="comment">// 传值，不会影响实参。</span></span><br><span class="line">	<span class="built_in">func2</span>(&amp;girl);            <span class="comment">// 传地址，修改实参</span></span><br><span class="line">	<span class="built_in">func3</span>(girl);              <span class="comment">// 传引用，修改实参</span></span><br><span class="line">	</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;亲爱的&quot;</span> &lt;&lt; girl.no &lt;&lt; <span class="string">&quot;号：&quot;</span> &lt;&lt; girl.str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>传引用不必使用二级指针</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func1</span><span class="params">(<span class="type">int</span>** p)</span>      <span class="comment">// 传地址，实参是指针的地址，形参是二级指针。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	*p = <span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">3</span>);       <span class="comment">// p是二级指针，存放指针的地址。</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func1内存的地址是：&quot;</span> &lt;&lt; *p &lt;&lt; <span class="string">&quot;，内存中的值是：&quot;</span> &lt;&lt; **p &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(<span class="type">int</span>*&amp; p)</span>     <span class="comment">// 传引用，实参是指针，形参是指针的别名。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	p = <span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">3</span>);         <span class="comment">// p是指针的别名。</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;func2内存的地址是：&quot;</span> &lt;&lt; p &lt;&lt; <span class="string">&quot;，内存中的值是：&quot;</span> &lt;&lt; *p &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span>* p = <span class="literal">nullptr</span>;    <span class="comment">// 存放在子函数中动态分配内存的地址。</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">func1</span>(&amp;p);      <span class="comment">// 传地址，实参填指针p的地址。</span></span><br><span class="line">	<span class="built_in">func2</span>(p);      <span class="comment">// 传引用，实参填指针p。</span></span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;main 内存的地址是：&quot;</span> &lt;&lt; p &lt;&lt; <span class="string">&quot;，内存中的值是：&quot;</span> &lt;&lt; *p &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">delete</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="引用的形参和const"><a href="#引用的形参和const" class="headerlink" title="引用的形参和const"></a>引用的形参和const</h4><p>如果函数的实参不是左值或与const引用形参的类型不匹配，那么C++将创建正确类型的匿名变量，将实参的值传递给匿名变量，并让形参来引用该变量。</p>
+<p><strong>为什么要将引用形参声明为const</strong></p>
+<ul>
+<li>使用const可以避免无意中修改数据的编程错误。</li>
+<li>使用const使函数能够处理const和非const实参，否则将只能接受非const实参。（可见const与引用和指针.md)</li>
+<li>使用const，函数能正确生成并使用临时变量。</li>
+</ul>
+<p>左值是可以被引用的数据对象，可以通过地址访问它们，例如：变量、数组元素、结构体成员、引用和解引用的指针。<br>非左值包括字面常量（用双引号包含的字符串除外）和包含多项的表达式。</p>
+<p><strong>什么时候将创建临时变量？</strong></p>
+<ul>
+<li>引用是const。</li>
+<li>数据对象的类型是正确的，但不是左值。</li>
+<li>数据对象的类型不正确，但可以转换为正确的类型。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func1</span><span class="params">(<span class="type">int</span> no, string str)</span>    <span class="comment">// 传值。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;亲爱的&quot;</span> &lt;&lt; no &lt;&lt; <span class="string">&quot;号：&quot;</span> &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func2</span><span class="params">(<span class="type">const</span> <span class="type">int</span>* no,<span class="type">const</span> string* str)</span>    <span class="comment">// 传地址。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;亲爱的&quot;</span> &lt;&lt; *no &lt;&lt; <span class="string">&quot;号：&quot;</span> &lt;&lt; *str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func22</span><span class="params">( <span class="type">int</span>* no, string* str)</span>    <span class="comment">// 传地址。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;亲爱的&quot;</span> &lt;&lt; *no &lt;&lt; <span class="string">&quot;号：&quot;</span> &lt;&lt; *str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func3</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; no, <span class="type">const</span> string&amp; str)</span>    <span class="comment">// 传引用。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;亲爱的&quot;</span> &lt;&lt; no &lt;&lt; <span class="string">&quot;号：&quot;</span> &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func33</span><span class="params">( <span class="type">int</span>&amp; no,  string&amp; str)</span>    <span class="comment">// 传引用。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;亲爱的&quot;</span> &lt;&lt; no &lt;&lt; <span class="string">&quot;号：&quot;</span> &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> bh = <span class="number">3</span>;</span><br><span class="line">    string message = <span class="string">&quot;我是一只傻傻鸟。&quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">func1</span>(<span class="number">8</span>, <span class="string">&quot;我是一只小小鸟。&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">func2</span>(<span class="number">8</span>, <span class="string">&quot;我是一只小小鸟。&quot;</span>);   <span class="comment">// 报错，类型不兼容</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    指针没有这种创建临时变量的方式</span></span><br><span class="line"><span class="comment">    const int* no = 8;         // 无地址</span></span><br><span class="line"><span class="comment">    int tmp = 8;</span></span><br><span class="line"><span class="comment">    const int* no = &amp;tmp;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">func2</span>(&amp;bh, &amp;message);       <span class="comment">// 正确，常量指针可以指向变量也可以指向常量。</span></span><br><span class="line">    <span class="built_in">func22</span>(<span class="number">8</span>, <span class="string">&quot;我是一只小小鸟。&quot;</span>);  <span class="comment">// 报错，类型不兼容</span></span><br><span class="line">    <span class="built_in">func22</span>(&amp;bh, &amp;message);      <span class="comment">// 正确</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">func3</span>(<span class="string">&#x27;X&#x27;</span>, <span class="string">&quot;我是一只小小鸟。&quot;</span>);</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>&amp; no = <span class="string">&#x27;X&#x27;</span>;        <span class="comment">// &#x27;X&#x27;为char类型，可以转换为int。</span></span><br><span class="line">    <span class="comment">//等同于</span></span><br><span class="line">    <span class="type">int</span> tmp = <span class="built_in">int</span>(<span class="string">&#x27;X&#x27;</span>);</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>&amp; no = tmp;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">func3</span>(<span class="string">&quot;字符串&quot;</span>, <span class="string">&quot;我是一只小小鸟。&quot;</span>);    <span class="comment">// 错误，类型无法转换string -&gt; int</span></span><br><span class="line">    <span class="built_in">func3</span>(bh, message);     <span class="comment">// 正确，常量引用可以指向变量也可以指向常量。</span></span><br><span class="line">    <span class="built_in">func33</span>(<span class="string">&#x27;X&#x27;</span>, <span class="string">&quot;我是一只小小鸟。&quot;</span>);    <span class="comment">// 错误，非const，无法创建临时变量</span></span><br><span class="line">    <span class="built_in">func33</span>(bh, message);    <span class="comment">// 正确</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="引用用于函数的返回值"><a href="#引用用于函数的返回值" class="headerlink" title="引用用于函数的返回值"></a>引用用于函数的返回值</h4><p>传统的函数返回机制与值传递类似。<br>函数的返回值被拷贝到一个临时位置（寄存器或栈），然后调用者程序再使用这个值。<br>如果返回的是一个结构体，将把整个结构体拷贝到临时的位置。<br>如果返回引用不会拷贝内存。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//sqrt(36)的返回值6被拷贝到临时的位置，然后赋值给m。</span></span><br><span class="line"><span class="type">double</span> m=<span class="built_in">sqrt</span>(<span class="number">36</span>);      </span><br></pre></td></tr></table></figure>
+<p><strong>语法:</strong> 返回值的数据类型&amp; 函数名(形参列表);</p>
+<h5 id="如果返回局部变量的引用，其本质是野指针，后果不可预知。"><a href="#如果返回局部变量的引用，其本质是野指针，后果不可预知。" class="headerlink" title="如果返回局部变量的引用，其本质是野指针，后果不可预知。"></a>如果返回局部变量的引用，其本质是野指针，后果不可预知。</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span>&amp; b = <span class="built_in">func</span>();		<span class="comment">// 函数func调用结束后，局部变量a将销毁，b将指向野指针。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="可以返回函数的引用形参、类的成员、全局变量、静态变量。"><a href="#可以返回函数的引用形参、类的成员、全局变量、静态变量。" class="headerlink" title="可以返回函数的引用形参、类的成员、全局变量、静态变量。"></a>可以返回函数的引用形参、类的成员、全局变量、静态变量。</h5><p>引用形参本身就绑定到调用者传入的变量上，因此返回它们的引用是安全的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">max</span><span class="params">(<span class="type">int</span>&amp; a, <span class="type">int</span>&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a &gt; b) ? a : b;  <span class="comment">// 返回引用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">5</span>, y = <span class="number">10</span>;</span><br><span class="line">    <span class="built_in">max</span>(x, y) = <span class="number">100</span>;  <span class="comment">// 修改的是 x 或 y 中较大的一个</span></span><br><span class="line">    std::cout &lt;&lt; x &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; y &lt;&lt; std::endl;  <span class="comment">// 输出: 5 100</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>返回的是对象的成员变量的引用，只要对象还存在，这个引用就是有效的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Person</span>(<span class="type">int</span> a) : <span class="built_in">age</span>(a) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">int</span>&amp; <span class="title">getAge</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> age; &#125;  <span class="comment">// 返回成员的引用</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">Person <span class="title">p</span><span class="params">(<span class="number">25</span>)</span></span>;</span><br><span class="line">    p.<span class="built_in">getAge</span>() = <span class="number">30</span>;  <span class="comment">// 修改成员变量</span></span><br><span class="line">    std::cout &lt;&lt; p.<span class="built_in">getAge</span>() &lt;&lt; std::endl;  <span class="comment">// 输出: 30</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>全局变量生命周期贯穿整个程序，返回它的引用是安全的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> global_value = <span class="number">42</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">getGlobal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> global_value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">getGlobal</span>() = <span class="number">100</span>;  <span class="comment">// 修改全局变量</span></span><br><span class="line">    std::cout &lt;&lt; global_value &lt;&lt; std::endl;  <span class="comment">// 输出: 100</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>静态变量在函数内只初始化一次，直到程序结束都存在，返回引用是安全的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">staticCounter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> counter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> counter;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">staticCounter</span>() = <span class="number">10</span>;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">staticCounter</span>() &lt;&lt; std::endl;  <span class="comment">// 输出: 10</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="返回引用的函数是被引用的变量的别名，可将const用于引用的返回类型，防止调用者通过返回值修改被引用的变量。"><a href="#返回引用的函数是被引用的变量的别名，可将const用于引用的返回类型，防止调用者通过返回值修改被引用的变量。" class="headerlink" title="返回引用的函数是被引用的变量的别名，可将const用于引用的返回类型，防止调用者通过返回值修改被引用的变量。"></a>返回引用的函数是被引用的变量的别名，可将const用于引用的返回类型，防止调用者通过返回值修改被引用的变量。</h5><p>本质理解：返回引用的函数 &#x3D; 返回某个变量的别名<br>如果不加const，当函数返回引用时，允许调用者访问并修改那个变量本身。<br>如果返回类型是 const T&amp;，那么即使你返回的是可修改的变量，调用者也不能改了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> val = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">getRef</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span>&amp; <span class="title">getConstRef</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">getRef</span>() = <span class="number">20</span>;	 <span class="comment">// ✅ 可以修改 val</span></span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; std::endl; 	<span class="comment">// 输出: 20</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">getConstRef</span>() = <span class="number">20</span>;  <span class="comment">// ❌ 编译错误！不能通过 const 引用修改 val</span></span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">getConstRef</span>() &lt;&lt; std::endl;  <span class="comment">// 输出: 10</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/" data-id="cmdohx9hb000430w8czb1d4d1" data-title="引用" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">枚举</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/">引用</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/">枚举</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构与算法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/29/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98/">动态分配内存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

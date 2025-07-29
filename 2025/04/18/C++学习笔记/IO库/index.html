@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>IO库 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="核心基类体系C++ 的输入输出流系统是基于继承体系构建的，主要的几个核心类包括： 1234567   ios_base       ↑      ios     ↙   ↘istream  ostream     ↘   ↙    iostream    类名 类型 功能    ios_base 基类 所有流类的最终基类，提供状态、格式标志等   ios 模板基类 ios_base 的子类，支持数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IO库">
+<meta property="og:url" content="http://example.com/2025/04/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/IO%E5%BA%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="核心基类体系C++ 的输入输出流系统是基于继承体系构建的，主要的几个核心类包括： 1234567   ios_base       ↑      ios     ↙   ↘istream  ostream     ↘   ↙    iostream    类名 类型 功能    ios_base 基类 所有流类的最终基类，提供状态、格式标志等   ios 模板基类 ios_base 的子类，支持数">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-18T11:28:47.556Z">
+<meta property="article:modified_time" content="2025-04-19T16:07:15.032Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C++学习笔记/IO库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/IO%E5%BA%93/" class="article-date">
+  <time class="dt-published" datetime="2025-04-18T11:28:47.556Z" itemprop="datePublished">2025-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      IO库
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="核心基类体系"><a href="#核心基类体系" class="headerlink" title="核心基类体系"></a>核心基类体系</h2><p>C++ 的输入输出流系统是基于继承体系构建的，主要的几个核心类包括：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   ios_base</span><br><span class="line">       ↑</span><br><span class="line">      ios</span><br><span class="line">     ↙   ↘</span><br><span class="line">istream  ostream</span><br><span class="line">     ↘   ↙</span><br><span class="line">    iostream</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">类名</th>
+<th align="center">类型</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ios_base</td>
+<td align="center">基类</td>
+<td align="center">所有流类的最终基类，提供状态、格式标志等</td>
+</tr>
+<tr>
+<td align="center">ios</td>
+<td align="center">模板基类</td>
+<td align="center">ios_base 的子类，支持数据类型管理</td>
+</tr>
+<tr>
+<td align="center">istream</td>
+<td align="center">输入流类</td>
+<td align="center">继承 ios，定义提取运算符 &gt;&gt;、get() 等</td>
+</tr>
+<tr>
+<td align="center">ostream</td>
+<td align="center">输出流类</td>
+<td align="center">继承 ios，定义插入运算符 &lt;&lt;、put() 等</td>
+</tr>
+<tr>
+<td align="center">iostream</td>
+<td align="center">输入输出流类</td>
+<td align="center">继承自 istream 和 ostream，支持读写</td>
+</tr>
+</tbody></table>
+<h2 id="标准输入输出流"><a href="#标准输入输出流" class="headerlink" title="标准输入输出流"></a>标准输入输出流</h2><p>定义在头文件 <iostream> 中，默认使用的是 std 命名空间。包含istream，ostream以及iostream类型，根据这些类型创建对象完成输入输出的操作。</p>
+<ul>
+<li>std::istream - 输入流类型<ul>
+<li>功能：用于从输入设备读取数据（例如键盘、文件）。</li>
+<li>常用对象：<ul>
+<li>std::cin：标准输入流，通常从键盘读取数据。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>std::ostream - 输出流类型<ul>
+<li>功能：用于向输出设备（通常是屏幕）写入数据。</li>
+<li>常用对象：<ul>
+<li>std::cout：标准输出流，通常向屏幕输出数据。</li>
+<li>std::cerr：标准错误流，通常用于输出错误信息。</li>
+<li>std::clog：标准日志流，通常用于输出日志信息。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>std::iostream — 输入输出流类型<ul>
+<li>功能：用于支持同时输入和输出。</li>
+<li>是 istream 和 ostream 的组合类。</li>
+<li>虽然标准流（如 cin, cout）本身是 istream 或 ostream 类型，但一些流（如 fstream) 就继承自 iostream。</li>
+</ul>
+</li>
+</ul>
+<h4 id="常用的输入函数"><a href="#常用的输入函数" class="headerlink" title="常用的输入函数"></a>常用的输入函数</h4><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">cin &gt;&gt; var</td>
+<td align="center">读取基本数据类型，跳过空白（空格、制表符、换行符）</td>
+</tr>
+<tr>
+<td align="center">getline(cin, s)</td>
+<td align="center">读取整行（包括空格）</td>
+</tr>
+<tr>
+<td align="center">cin.get(ch)</td>
+<td align="center">读取一个字符（包括空格）</td>
+</tr>
+<tr>
+<td align="center">cin.read(buf, n)</td>
+<td align="center">读取 n 个字节，常用于二进制</td>
+</tr>
+</tbody></table>
+<h4 id="错误输出流-cerr-和-clog"><a href="#错误输出流-cerr-和-clog" class="headerlink" title="错误输出流 cerr 和 clog"></a>错误输出流 cerr 和 clog</h4><p>cerr 不带缓冲，即时输出，适合输出错误信息。<br>clog 带缓冲，用于日志记录。</p>
+<h4 id="输入状态检查与处理"><a href="#输入状态检查与处理" class="headerlink" title="输入状态检查与处理"></a>输入状态检查与处理</h4><p>C++ 流输入经常会出错，需要检查状态。</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">cin.good()</td>
+<td align="center">一切正常，则返回true</td>
+</tr>
+<tr>
+<td align="center">cin.fail()</td>
+<td align="center">出现非致命错误，比如类型不匹配，则返回true</td>
+</tr>
+<tr>
+<td align="center">cin.bad()</td>
+<td align="center">出现严重错误，比如硬件问题，则返回true</td>
+</tr>
+<tr>
+<td align="center">cin.eof()</td>
+<td align="center">到达输入末尾（EOF），则返回true</td>
+</tr>
+<tr>
+<td align="center">cin.clear()</td>
+<td align="center">清除错误状态，返回void</td>
+</tr>
+</tbody></table>
+<h2 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h2><p>头文件 <fstream> 提供了用于文件读写的三个主要类：</p>
+<table>
+<thead>
+<tr>
+<th align="center">类名</th>
+<th align="center">功能</th>
+<th align="center">继承自</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ifstream</td>
+<td align="center">输入文件流（读取文件）</td>
+<td align="center">istream</td>
+</tr>
+<tr>
+<td align="center">ofstream</td>
+<td align="center">输出文件流（写入文件）</td>
+<td align="center">ostream</td>
+</tr>
+<tr>
+<td align="center">fstream</td>
+<td align="center">输入输出文件流</td>
+<td align="center">iostream</td>
+</tr>
+</tbody></table>
+<h4 id="文件流常用成员函数"><a href="#文件流常用成员函数" class="headerlink" title="文件流常用成员函数"></a>文件流常用成员函数</h4><table>
+<thead>
+<tr>
+<th align="center">函数名</th>
+<th align="center">功能说明</th>
+<th align="center">示例用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">open()</td>
+<td align="center">打开一个文件</td>
+<td align="center">file.open(“data.txt”, ios::in);</td>
+</tr>
+<tr>
+<td align="center">is_open()</td>
+<td align="center">判断文件是否成功打开</td>
+<td align="center">if (file.is_open())</td>
+</tr>
+<tr>
+<td align="center">close()</td>
+<td align="center">关闭文件（释放资源）</td>
+<td align="center">file.close();</td>
+</tr>
+<tr>
+<td align="center">eof()</td>
+<td align="center">判断是否到达文件末尾</td>
+<td align="center">while (!file.eof())</td>
+</tr>
+<tr>
+<td align="center">fail()</td>
+<td align="center">判断是否读取失败或格式错误</td>
+<td align="center">if (file.fail())</td>
+</tr>
+<tr>
+<td align="center">good()</td>
+<td align="center">判断是否一切正常（没错）</td>
+<td align="center">if (file.good())</td>
+</tr>
+<tr>
+<td align="center">clear()</td>
+<td align="center">清除错误标志，恢复流状态</td>
+<td align="center">file.clear();</td>
+</tr>
+<tr>
+<td align="center">seekg()</td>
+<td align="center">设置输入流的位置（get）</td>
+<td align="center">file.seekg(0);</td>
+</tr>
+<tr>
+<td align="center">seekp()</td>
+<td align="center">设置输出流的位置（put）</td>
+<td align="center">file.seekp(0, ios::end);</td>
+</tr>
+<tr>
+<td align="center">tellg()</td>
+<td align="center">返回当前输入位置（get pointer）</td>
+<td align="center">int pos &#x3D; file.tellg();</td>
+</tr>
+<tr>
+<td align="center">tellp()</td>
+<td align="center">返回当前输出位置（put pointer）</td>
+<td align="center">int pos &#x3D; file.tellp();</td>
+</tr>
+<tr>
+<td align="center">getline()</td>
+<td align="center">从文件读取一整行</td>
+<td align="center">getline(file, str);</td>
+</tr>
+<tr>
+<td align="center">read()</td>
+<td align="center">从文件中读入二进制数据（低层）</td>
+<td align="center">file.read(buf, size);</td>
+</tr>
+<tr>
+<td align="center">write()</td>
+<td align="center">向文件写入二进制数据（低层）</td>
+<td align="center">file.write(buf, size);</td>
+</tr>
+</tbody></table>
+<h5 id="open-is-open"><a href="#open-is-open" class="headerlink" title="open() &#x2F; is_open()"></a>open() &#x2F; is_open()</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fstream file;</span><br><span class="line">file.<span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>, ios::in | ios::out);</span><br><span class="line"><span class="keyword">if</span> (file.<span class="built_in">is_open</span>()) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;文件成功打开&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file.<span class="built_in">close</span>();  <span class="comment">// 关闭并保存修改，释放资源</span></span><br></pre></td></tr></table></figure>
+<h5 id="eof-（是否到达文件末尾）"><a href="#eof-（是否到达文件末尾）" class="headerlink" title="eof()（是否到达文件末尾）"></a>eof()（是否到达文件末尾）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string line;</span><br><span class="line"><span class="keyword">while</span> (!file.<span class="built_in">eof</span>()) &#123;</span><br><span class="line">    <span class="built_in">getline</span>(file, line);</span><br><span class="line">    cout &lt;&lt; line &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="fail-good-clear"><a href="#fail-good-clear" class="headerlink" title="fail() &#x2F; good() &#x2F; clear()"></a>fail() &#x2F; good() &#x2F; clear()</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">file &gt;&gt; num;</span><br><span class="line"><span class="keyword">if</span> (file.<span class="built_in">fail</span>()) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;读取失败，格式不对！&quot;</span> &lt;&lt; endl;</span><br><span class="line">    file.<span class="built_in">clear</span>(); <span class="comment">// 重置流状态</span></span><br><span class="line">    file.<span class="built_in">ignore</span>(<span class="number">1000</span>, <span class="string">&#x27;\n&#x27;</span>); <span class="comment">// 清除错误输入</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="seekg-seekp-（移动文件指针）"><a href="#seekg-seekp-（移动文件指针）" class="headerlink" title="seekg() &#x2F; seekp()（移动文件指针）"></a>seekg() &#x2F; seekp()（移动文件指针）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file.<span class="built_in">seekg</span>(<span class="number">0</span>); <span class="comment">// 读指针移到文件开头</span></span><br><span class="line">file.<span class="built_in">seekp</span>(<span class="number">0</span>, ios::end); <span class="comment">// 写指针移到文件末尾</span></span><br></pre></td></tr></table></figure>
+<h5 id="tellg-tellp-（获取当前指针位置）"><a href="#tellg-tellp-（获取当前指针位置）" class="headerlink" title="tellg() &#x2F; tellp()（获取当前指针位置）"></a>tellg() &#x2F; tellp()（获取当前指针位置）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> pos = file.<span class="built_in">tellg</span>();</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;当前位置：&quot;</span> &lt;&lt; pos &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h5 id="read-write-（二进制文件处理）"><a href="#read-write-（二进制文件处理）" class="headerlink" title="read() &#x2F; write()（二进制文件处理）"></a>read() &#x2F; write()（二进制文件处理）</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> buffer[<span class="number">100</span>];</span><br><span class="line">file.<span class="built_in">read</span>(buffer, <span class="built_in">sizeof</span>(buffer));  <span class="comment">// 读取二进制内容</span></span><br><span class="line">file.<span class="built_in">write</span>(buffer, <span class="built_in">sizeof</span>(buffer)); <span class="comment">// 写入二进制内容</span></span><br></pre></td></tr></table></figure>
+<h4 id="打开文件的方式（open-的第二个参数）"><a href="#打开文件的方式（open-的第二个参数）" class="headerlink" title="打开文件的方式（open 的第二个参数）"></a>打开文件的方式（open 的第二个参数）</h4><p>用 fstream、ifstream、ofstream 打开文件时传入的第二个参数，控制文件是以读、写、追加、二进制等方式打开的。使用的是 ios 枚举值，组合使用可以用 |。</p>
+<table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ios::in</td>
+<td align="center">输入（读取）模式</td>
+</tr>
+<tr>
+<td align="center">ios::out</td>
+<td align="center">输出（写入）模式</td>
+</tr>
+<tr>
+<td align="center">ios::app</td>
+<td align="center">追加到文件末尾</td>
+</tr>
+<tr>
+<td align="center">ios::trunc</td>
+<td align="center">打开时清空原内容（ios::out 的默认行为）</td>
+</tr>
+<tr>
+<td align="center">ios::binary</td>
+<td align="center">二进制模式</td>
+</tr>
+<tr>
+<td align="center">ios::ate</td>
+<td align="center">打开文件并定位到文件末尾</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>只可以对ofstream或fstream对象设定out模式</p>
+</li>
+<li><p>只可以对ifstream或fstream对象设定in模式</p>
+</li>
+<li><p>只有当out也被设定时才可设定trunc模式</p>
+</li>
+<li><p>只要trunc没被设定，就可以设定app模式，在app模式下，即使没有显示指定out模式，文件也总是以输出方式被打开</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ofstream <span class="title">file</span><span class="params">(<span class="string">&quot;a.txt&quot;</span>, ios::app)</span></span>;</span><br><span class="line"><span class="function">ofstream <span class="title">file</span><span class="params">(<span class="string">&quot;a.txt&quot;</span>, ios::app | ios::out)</span></span>;  <span class="comment">// 等价</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>默认情况下，即使我们没有指定trunc，以out模式打开的文件也会被截断，为保留以out模式打开的文件的内容，我们必须同时指定app模式，这样只会将数据追加写到文件末尾；或者同时指定in模式，即打开文件同时进行读写操作。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ofstream <span class="title">file</span><span class="params">(<span class="string">&quot;test.txt&quot;</span>)</span></span>;</span><br><span class="line"><span class="comment">//实际等价于</span></span><br><span class="line"><span class="function">ofstream <span class="title">file</span><span class="params">(<span class="string">&quot;test.txt&quot;</span>, ios::out | ios::trunc)</span></span>;       <span class="comment">//这会 清空已有内容，然后从头开始写</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//解决方式</span></span><br><span class="line"><span class="comment">//1. 追加写入：加上 ios::app 模式</span></span><br><span class="line"><span class="function">ofstream <span class="title">file</span><span class="params">(<span class="string">&quot;test.txt&quot;</span>, ios::out | ios::app)</span></span>;     <span class="comment">//这样打开文件时不会清空，而是在文件末尾追加内容。</span></span><br><span class="line"><span class="function">ofstream <span class="title">file</span><span class="params">(<span class="string">&quot;test.txt&quot;</span>, ios::app)</span></span>; <span class="comment">// 等价</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 同时读写文件，不清空内容：加上 ios::in</span></span><br><span class="line"><span class="function">fstream <span class="title">file</span><span class="params">(<span class="string">&quot;test.txt&quot;</span>, ios::in | ios::out)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>ate和binary模式可用于任何类型的文件流对象，且可以与其他任何文件模式组合使用。</p>
+</li>
+<li><p>ios::app 是强制只能在末尾追加（写操作只能在末尾）而ios::ate 是“打开时”跳到末尾，但之后可以跳到任意位置写入或读取！</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fstream <span class="title">file</span><span class="params">(<span class="string">&quot;test.txt&quot;</span>, ios::in | ios::out | ios::ate)</span></span>;</span><br><span class="line">file &lt;&lt; <span class="string">&quot;追加的内容&quot;</span>;       <span class="comment">// 写在末尾</span></span><br><span class="line">file.<span class="built_in">seekp</span>(<span class="number">0</span>);             </span><br><span class="line">file &lt;&lt; <span class="string">&quot;覆盖前面的内容&quot;</span>;   <span class="comment">// 可以跳转位置修改</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="常见打开文件的方式"><a href="#常见打开文件的方式" class="headerlink" title="常见打开文件的方式"></a>常见打开文件的方式</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ifstream file;</span><br><span class="line">file.<span class="built_in">open</span>(<span class="string">&quot;data.txt&quot;</span>, ios::in);</span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line"><span class="function">ifstream <span class="title">file</span><span class="params">(<span class="string">&quot;data.txt&quot;</span>)</span></span>;  <span class="comment">//这个构造函数自动在创建对象的同时就调用了 open() 方法，并且以默认的 ios::in（输入模式） 打开文件。</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">默认模式</th>
+<th align="center">构造函数行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ifstream</td>
+<td align="center">ios::in</td>
+<td align="center">打开文件用于读取</td>
+</tr>
+<tr>
+<td align="center">ofstream</td>
+<td align="center">ios::out</td>
+<td align="center">打开文件用于写入（默认会清空内容）</td>
+</tr>
+<tr>
+<td align="center">fstream</td>
+<td align="center">ios::in ios::out</td>
+<td align="center">同时读写</td>
+</tr>
+</tbody></table>
+<h5 id="1-创建并打开当前目录下的文件："><a href="#1-创建并打开当前目录下的文件：" class="headerlink" title="1. 创建并打开当前目录下的文件："></a>1. 创建并打开当前目录下的文件：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ifstream <span class="title">file</span><span class="params">(<span class="string">&quot;data.txt&quot;</span>)</span></span>;  <span class="comment">// data.txt 在当前目录</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-创建并打开绝对路径下的文件（Windows-示例）："><a href="#2-创建并打开绝对路径下的文件（Windows-示例）：" class="headerlink" title="2. 创建并打开绝对路径下的文件（Windows 示例）："></a>2. 创建并打开绝对路径下的文件（Windows 示例）：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ifstream <span class="title">file</span><span class="params">(<span class="string">&quot;C:\\Users\\YourName\\Documents\\myfile.txt&quot;</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<h5 id="3-使用-fstream-同时读写："><a href="#3-使用-fstream-同时读写：" class="headerlink" title="3. 使用 fstream 同时读写："></a>3. 使用 fstream 同时读写：</h5><p>使用 fstream 时，要手动指定读&#x2F;写模式（ios::in | ios::out）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fstream <span class="title">file</span><span class="params">(<span class="string">&quot;C:\\path\\to\\file.txt&quot;</span>, ios::in | ios::out)</span></span>;</span><br></pre></td></tr></table></figure>
+<h4 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h4><h5 id="写入文件-ofstream"><a href="#写入文件-ofstream" class="headerlink" title="写入文件 (ofstream)"></a>写入文件 (ofstream)</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">ofstream <span class="title">outFile</span><span class="params">(<span class="string">&quot;output.txt&quot;</span>)</span></span>;  <span class="comment">// 默认 ios::out</span></span><br><span class="line">    <span class="keyword">if</span> (!outFile) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;无法打开文件进行写入。&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    outFile &lt;&lt; <span class="string">&quot;Hello, 文件流！&quot;</span> &lt;&lt; endl;</span><br><span class="line">    outFile &lt;&lt; <span class="string">&quot;第二行内容&quot;</span> &lt;&lt; endl;</span><br><span class="line">    outFile.<span class="built_in">close</span>();  <span class="comment">// 关闭文件</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="读取文件-ifstream"><a href="#读取文件-ifstream" class="headerlink" title="读取文件 (ifstream)"></a>读取文件 (ifstream)</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">ifstream <span class="title">inFile</span><span class="params">(<span class="string">&quot;output.txt&quot;</span>)</span></span>;  <span class="comment">// 默认 ios::in</span></span><br><span class="line">    <span class="keyword">if</span> (!inFile) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;无法打开文件进行读取。&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    string line;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">getline</span>(inFile, line)) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;读取内容：&quot;</span> &lt;&lt; line &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    inFile.<span class="built_in">close</span>();  <span class="comment">// 关闭文件</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="同时读写-fstream"><a href="#同时读写-fstream" class="headerlink" title="同时读写 (fstream)"></a>同时读写 (fstream)</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">fstream <span class="title">file</span><span class="params">(<span class="string">&quot;data.txt&quot;</span>, ios::in | ios::out | ios::trunc)</span></span>;  <span class="comment">// 同时读写并清空文件</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!file.<span class="built_in">is_open</span>()) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;文件打开失败&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    file &lt;&lt; <span class="string">&quot;写入一些数据。&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    file.<span class="built_in">seekg</span>(<span class="number">0</span>);  <span class="comment">// 读前要将文件位置移动到开头</span></span><br><span class="line">    string line;</span><br><span class="line">    <span class="built_in">getline</span>(file, line);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;读取到的数据：&quot;</span> &lt;&lt; line &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    file.<span class="built_in">close</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="string流"><a href="#string流" class="headerlink" title="string流"></a>string流</h2><p>#include <sstream>  头文件 提供 stringstream、istringstream、ostringstream 三种类型</p>
+<table>
+<thead>
+<tr>
+<th align="center">类名</th>
+<th align="center">用途</th>
+<th align="center">继承自</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">istringstream</td>
+<td align="center">从字符串中读取数据（输入流）</td>
+<td align="center">istream</td>
+</tr>
+<tr>
+<td align="center">ostringstream</td>
+<td align="center">向字符串中写入数据（输出流）</td>
+<td align="center">ostream</td>
+</tr>
+<tr>
+<td align="center">stringstream</td>
+<td align="center">可读可写的字符串流</td>
+<td align="center">iostream</td>
+</tr>
+</tbody></table>
+<h4 id="常用的成员函数"><a href="#常用的成员函数" class="headerlink" title="常用的成员函数"></a>常用的成员函数</h4><table>
+<thead>
+<tr>
+<th align="center">成员函数</th>
+<th align="center">作用说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">.str()</td>
+<td align="center">✅ 获取当前流中的字符串内容</td>
+</tr>
+<tr>
+<td align="center">.str(“text”)</td>
+<td align="center">✅ 设置（替换）流的字符串内容</td>
+</tr>
+<tr>
+<td align="center">.clear()</td>
+<td align="center">✅ 清除错误标志（如读取失败时必须调用才能继续用）</td>
+</tr>
+<tr>
+<td align="center">.eof()</td>
+<td align="center">检查是否读取到了字符串末尾</td>
+</tr>
+<tr>
+<td align="center">.fail()</td>
+<td align="center">检查是否发生错误（如类型不匹配读取失败）</td>
+</tr>
+<tr>
+<td align="center">.good()</td>
+<td align="center">检查流是否处于有效状态</td>
+</tr>
+<tr>
+<td align="center">.seekg(pos)</td>
+<td align="center">设置读取位置（get）指针</td>
+</tr>
+<tr>
+<td align="center">.seekp(pos)</td>
+<td align="center">设置写入位置（put）指针</td>
+</tr>
+<tr>
+<td align="center">.tellg()</td>
+<td align="center">返回当前读取位置</td>
+</tr>
+<tr>
+<td align="center">.tellp()</td>
+<td align="center">返回当前写入位置</td>
+</tr>
+<tr>
+<td align="center">&lt;&lt;</td>
+<td align="center">向流中写入数据（流式写入）</td>
+</tr>
+<tr>
+<td align="center">&gt;&gt;</td>
+<td align="center">从流中读取数据（流式提取）</td>
+</tr>
+</tbody></table>
+<h4 id="istringstream-从字符串读取数据"><a href="#istringstream-从字符串读取数据" class="headerlink" title="istringstream - 从字符串读取数据"></a>istringstream - 从字符串读取数据</h4><h5 id="分割字符串，类型转换"><a href="#分割字符串，类型转换" class="headerlink" title="分割字符串，类型转换"></a>分割字符串，类型转换</h5><p>解析字符串中的数据，就像使用 cin 一样，你可以用 &gt;&gt; 操作符按顺序从字符串中读取内容，并自动转换数据类型，默认是以空格、换行、制表符等“空白字符”作为分隔符的。也可以使用getline()自定义分隔符。</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">默认分隔符</th>
+<th align="center">自定义分隔符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">iss &gt;&gt; var</td>
+<td align="center">空格、换行、制表</td>
+<td align="center">❌ 不支持</td>
+</tr>
+<tr>
+<td align="center">getline(iss, s)</td>
+<td align="center">换行（默认）</td>
+<td align="center">✅ 可指定分隔符</td>
+</tr>
+<tr>
+<td align="center">getline(iss, s, ‘,’)</td>
+<td align="center">任意字符</td>
+<td align="center">✅ 自定义</td>
+</tr>
+</tbody></table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用 &gt;&gt; 读取，以空白字符作为分隔符</span></span><br><span class="line"><span class="comment">//输出 a=42, b=3.14, c=hello</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    string input = <span class="string">&quot;42 3.14 hello&quot;</span>;</span><br><span class="line">    <span class="function">istringstream <span class="title">iss</span><span class="params">(input)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">double</span> b;</span><br><span class="line">    string c;</span><br><span class="line"></span><br><span class="line">    iss &gt;&gt; a &gt;&gt; b &gt;&gt; c;     <span class="comment">//字符串 → int / float / double，能转换才能转换</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;a=&quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot;, b=&quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;, c=&quot;</span> &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用getline()读取，可自定义分隔符</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string s = <span class="string">&quot;apple,banana,orange&quot;</span>;</span><br><span class="line">    <span class="function">istringstream <span class="title">iss</span><span class="params">(s)</span></span>;</span><br><span class="line">    string item;</span><br><span class="line">    <span class="comment">//自定义，为分隔符</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">getline</span>(iss, item, <span class="string">&#x27;,&#x27;</span>)) &#123;   </span><br><span class="line">        cout &lt;&lt; item &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ostringstream-向字符串中写入内容"><a href="#ostringstream-向字符串中写入内容" class="headerlink" title="ostringstream - 向字符串中写入内容"></a>ostringstream - 向字符串中写入内容</h4><h5 id="拼接多个变量为字符串，类型转换"><a href="#拼接多个变量为字符串，类型转换" class="headerlink" title="拼接多个变量为字符串，类型转换"></a>拼接多个变量为字符串，类型转换</h5><p>ostringstream 是 C++ <sstream> 头文件中的一个类，用来将数据格式化写入字符串，就像用 cout 向屏幕输出一样，不过输出的目标是一个 string。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出 ID: 42, Score: 98.5, Name: Alice</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ostringstream oss;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> id = <span class="number">42</span>;</span><br><span class="line">    <span class="type">double</span> score = <span class="number">98.5</span>;</span><br><span class="line">    string name = <span class="string">&quot;Alice&quot;</span>;</span><br><span class="line"></span><br><span class="line">    oss &lt;&lt; <span class="string">&quot;ID: &quot;</span> &lt;&lt; id &lt;&lt; <span class="string">&quot;, Score: &quot;</span> &lt;&lt; score &lt;&lt; <span class="string">&quot;, Name: &quot;</span> &lt;&lt; name;      <span class="comment">//int / float / double → 字符串</span></span><br><span class="line"></span><br><span class="line">    string result = oss.<span class="built_in">str</span>();  <span class="comment">// 获取最终生成的字符串</span></span><br><span class="line">    cout &lt;&lt; result &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="stringstream-可读可写字符串流"><a href="#stringstream-可读可写字符串流" class="headerlink" title="stringstream - 可读可写字符串流"></a>stringstream - 可读可写字符串流</h4><p>它内部维护着一个字符串缓存（类似一个文本盒子），你可以先用 &lt;&lt; 写入内容，再用 &gt;&gt; 提取数据，像这样：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    stringstream ss;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 写入</span></span><br><span class="line">    ss &lt;&lt; <span class="string">&quot;100 3.14 hello&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 读取</span></span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">double</span> b;</span><br><span class="line">    string c;</span><br><span class="line">    ss &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; c &lt;&lt; endl;        <span class="comment">//100, 3.14, hello</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//字符串拆解 + 格式化写入</span></span><br><span class="line">string data = <span class="string">&quot;Tom 18 89.5&quot;</span>;</span><br><span class="line"><span class="function">stringstream <span class="title">ss</span><span class="params">(data)</span></span>;</span><br><span class="line"></span><br><span class="line">string name;</span><br><span class="line"><span class="type">int</span> age;</span><br><span class="line"><span class="type">float</span> score;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 读</span></span><br><span class="line">ss &gt;&gt; name &gt;&gt; age &gt;&gt; score;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 清空流 &amp; 写</span></span><br><span class="line">ss.<span class="built_in">str</span>(<span class="string">&quot;&quot;</span>);  <span class="comment">// 清空内容</span></span><br><span class="line">ss.<span class="built_in">clear</span>();  <span class="comment">// 清除状态</span></span><br><span class="line"></span><br><span class="line">ss &lt;&lt; <span class="string">&quot;姓名：&quot;</span> &lt;&lt; name &lt;&lt; <span class="string">&quot;，年龄：&quot;</span> &lt;&lt; age &lt;&lt; <span class="string">&quot;，成绩：&quot;</span> &lt;&lt; score;</span><br><span class="line">cout &lt;&lt; ss.<span class="built_in">str</span>() &lt;&lt; endl;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="格式化IO控制"><a href="#格式化IO控制" class="headerlink" title="格式化IO控制"></a>格式化IO控制</h2><p>C++ 提供了一组格式控制工具，来控制输出内容的 对齐方式、小数精度、进制、填充字符等。<br>这些方式定义在 头文件<br>#include <iomanip>  &#x2F;&#x2F; 提供格式控制符</p>
+<table>
+<thead>
+<tr>
+<th align="center">控制符</th>
+<th align="center">说明</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">std::setw(n)</td>
+<td align="center">设置字段宽度，默认右对齐（需要 <iomanip>）</td>
+<td align="center">cout &lt;&lt; setw(10) &lt;&lt; 123;</td>
+</tr>
+<tr>
+<td align="center">std::setfill(char)</td>
+<td align="center">设置填充字符（配合 setw 使用）</td>
+<td align="center">cout &lt;&lt; setfill(‘*’) &lt;&lt; setw(5) &lt;&lt; 1;</td>
+</tr>
+<tr>
+<td align="center">std::setprecision(n)</td>
+<td align="center">设置浮点数有效数字&#x2F;小数位</td>
+<td align="center">cout &lt;&lt; setprecision(3) &lt;&lt; pi;</td>
+</tr>
+<tr>
+<td align="center">std::fixed</td>
+<td align="center">以固定小数格式输出（配合 setprecision）</td>
+<td align="center">cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; pi;</td>
+</tr>
+<tr>
+<td align="center">std::scientific</td>
+<td align="center">科学计数法</td>
+<td align="center">cout &lt;&lt; scientific &lt;&lt; pi;</td>
+</tr>
+<tr>
+<td align="center">std::left &#x2F; std::right</td>
+<td align="center">设置对齐方式（默认右对齐）</td>
+<td align="center">cout &lt;&lt; left &lt;&lt; setw(5) &lt;&lt; x;</td>
+</tr>
+<tr>
+<td align="center">std::hex &#x2F; std::dec &#x2F; std::oct</td>
+<td align="center">设置整数的输出进制</td>
+<td align="center">cout &lt;&lt; hex &lt;&lt; 255;</td>
+</tr>
+<tr>
+<td align="center">std::showbase</td>
+<td align="center">显示进制前缀（如 0x, 0）</td>
+<td align="center">cout &lt;&lt; showbase &lt;&lt; hex &lt;&lt; 255;</td>
+</tr>
+<tr>
+<td align="center">std::showpos</td>
+<td align="center">输出正号（+）</td>
+<td align="center">cout &lt;&lt; showpos &lt;&lt; 123;</td>
+</tr>
+<tr>
+<td align="center">std::noshowpos</td>
+<td align="center">关闭正号显示</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">默认输出: 3.14159</span></span><br><span class="line"><span class="comment">固定精度输出: 3.14</span></span><br><span class="line"><span class="comment">科学计数法: 3.14e+00</span></span><br><span class="line"><span class="comment">-------123</span></span><br><span class="line"><span class="comment">hello-----world</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> pi = <span class="number">3.141592653</span>;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;默认输出: &quot;</span> &lt;&lt; pi &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;固定精度输出: &quot;</span> &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; pi &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;科学计数法: &quot;</span> &lt;&lt; scientific &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; pi &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="built_in">setw</span>(<span class="number">10</span>) &lt;&lt; <span class="built_in">setfill</span>(<span class="string">&#x27;-&#x27;</span>) &lt;&lt; <span class="number">123</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; left &lt;&lt; <span class="built_in">setw</span>(<span class="number">10</span>) &lt;&lt; <span class="string">&quot;hello&quot;</span> &lt;&lt; <span class="string">&quot;world&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/04/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/IO%E5%BA%93/" data-id="cmdohx9h1000030w8cicgd60w" data-title="IO库" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/04/20/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          顺序容器库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/04/14/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%B1%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">类</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/07/18/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%95%E7%94%A8/">引用</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9E%9A%E4%B8%BE/">枚举</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/17/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构与算法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/01/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%93%E6%9E%84%E4%BD%93/">结构体</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/29/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98/">动态分配内存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
